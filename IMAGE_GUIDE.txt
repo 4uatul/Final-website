@@ -1,0 +1,209 @@
+╔══════════════════════════════════════════════════════════════════╗
+║                    IMAGE SETUP GUIDE                             ║
+║              For Atul Bhardwaj's Portfolio                       ║
+╚══════════════════════════════════════════════════════════════════╝
+
+📁 FOLDER STRUCTURE (after adding images):
+
+your-portfolio-folder/
+│
+├── portfolio.html          ← Your main website file
+├── README.md              ← Detailed instructions
+├── QUICK_START.md         ← Quick setup guide
+├── PROJECT_TEMPLATE.html  ← Template for adding projects
+│
+├── profile.jpg            ← YOUR PROFILE PICTURE (ADD THIS!)
+├── project1.jpg           ← SmartStock screenshot (ADD THIS!)
+├── project2.jpg           ← TF-IDF Search Engine screenshot (ADD THIS!)
+└── project3.jpg           ← Heart Disease Predictor screenshot (ADD THIS!)
+
+
+═══════════════════════════════════════════════════════════════════
+                    IMAGE REQUIREMENTS
+═══════════════════════════════════════════════════════════════════
+
+📸 PROFILE PICTURE (profile.jpg)
+   ├─ Format: JPG or PNG
+   ├─ Recommended Size: 500x500px or larger
+   ├─ Shape: SQUARE (will be displayed as circular)
+   ├─ Quality: High resolution, professional headshot
+   └─ Tips: 
+      • Good lighting
+      • Professional attire
+      • Plain or blurred background
+      • Smile! 😊
+
+
+🖼️  PROJECT IMAGES (project1.jpg, project2.jpg, project3.jpg)
+   ├─ Format: JPG or PNG
+   ├─ Recommended Size: 800x500px (16:10 ratio)
+   ├─ Shape: RECTANGULAR (landscape orientation)
+   ├─ Quality: High resolution, clear screenshots
+   └─ Tips:
+      • Use actual project screenshots
+      • Show the UI/interface
+      • Include data visualizations if possible
+      • Clean, uncluttered view
+
+
+═══════════════════════════════════════════════════════════════════
+                WHERE TO GET PROJECT IMAGES
+═══════════════════════════════════════════════════════════════════
+
+Option 1: TAKE SCREENSHOTS of your projects
+   • Open your project in browser/application
+   • Press Windows Key + Shift + S (Windows)
+   • Or Cmd + Shift + 4 (Mac)
+   • Capture the most impressive view
+   • Crop to 800x500px
+
+Option 2: CREATE MOCKUP IMAGES
+   • Use Canva.com (free)
+   • Use Figma (free)
+   • Show data visualizations
+   • Show architecture diagrams
+
+Option 3: USE PLACEHOLDER IMAGES (Temporary)
+   • The website already has placeholders built-in
+   • They'll show colored boxes until you add real images
+   • Replace them when you have real screenshots
+
+
+═══════════════════════════════════════════════════════════════════
+                    SPECIFIC PROJECT IMAGES
+═══════════════════════════════════════════════════════════════════
+
+🔵 PROJECT 1: SmartStock (project1.jpg)
+   Best screenshots:
+   ├─ Dashboard showing inventory levels
+   ├─ Power BI analytics dashboard
+   ├─ Azure architecture diagram
+   └─ Real-time stock alerts interface
+
+
+🔵 PROJECT 2: TF-IDF Search Engine (project2.jpg)
+   Best screenshots:
+   ├─ Search interface with results
+   ├─ AWS architecture diagram
+   ├─ Performance metrics dashboard
+   └─ Code snippet showing TF-IDF implementation
+
+
+🔵 PROJECT 3: Heart Disease Predictor (project3.jpg)
+   Best screenshots:
+   ├─ ML model comparison chart
+   ├─ Confusion matrix visualization
+   ├─ Prediction interface/form
+   └─ ROC curve or performance metrics
+
+
+═══════════════════════════════════════════════════════════════════
+                    QUICK IMAGE EDITING
+═══════════════════════════════════════════════════════════════════
+
+Need to resize images? Use these FREE tools:
+
+🖼️  ONLINE TOOLS (No installation needed):
+   • iloveimg.com/resize-image
+   • pixlr.com/express
+   • photopea.com (like Photoshop, free)
+
+💻 DESKTOP TOOLS:
+   • Windows: Paint / Paint 3D (pre-installed)
+   • Mac: Preview (pre-installed)
+   • Cross-platform: GIMP (free download)
+
+
+═══════════════════════════════════════════════════════════════════
+                    NAMING YOUR FILES
+═══════════════════════════════════════════════════════════════════
+
+✅ CORRECT FILE NAMES:
+   ├─ profile.jpg
+   ├─ project1.jpg
+   ├─ project2.jpg
+   └─ project3.jpg
+
+❌ WRONG FILE NAMES (These won't work!):
+   ├─ Profile.jpg          (Capital P - case sensitive!)
+   ├─ profile.jpeg         (must be .jpg, not .jpeg)
+   ├─ profile picture.jpg  (no spaces allowed)
+   ├─ project_1.jpg        (use project1, not project_1)
+   └─ myproject.jpg        (must match exact names above)
+
+
+═══════════════════════════════════════════════════════════════════
+                DON'T HAVE IMAGES YET? NO PROBLEM!
+═══════════════════════════════════════════════════════════════════
+
+The portfolio will work WITHOUT images initially:
+   • Profile picture area will show alt text
+   • Projects will show placeholder images
+   • Everything else will work perfectly
+
+You can add images LATER and just refresh the browser!
+
+
+═══════════════════════════════════════════════════════════════════
+                    STEP-BY-STEP CHECKLIST
+═══════════════════════════════════════════════════════════════════
+
+□  Step 1: Get/create your profile picture
+□  Step 2: Rename it to exactly: profile.jpg
+□  Step 3: Take screenshots of your 3 projects
+□  Step 4: Rename them to: project1.jpg, project2.jpg, project3.jpg
+□  Step 5: Place ALL 4 images in the same folder as portfolio.html
+□  Step 6: Open portfolio.html in your browser
+□  Step 7: Verify all images show correctly
+□  Step 8: If any image doesn't show, check:
+          ├─ File is in correct folder?
+          ├─ File name is exactly correct?
+          ├─ File extension is .jpg (not .jpeg)?
+          └─ File isn't corrupted?
+
+
+═══════════════════════════════════════════════════════════════════
+                    TROUBLESHOOTING
+═══════════════════════════════════════════════════════════════════
+
+🔧 Image not showing?
+   → Check the file name matches EXACTLY (case-sensitive!)
+   → Make sure it's in the same folder as portfolio.html
+   → Try refreshing your browser (Ctrl + F5 or Cmd + Shift + R)
+
+🔧 Image looks stretched or distorted?
+   → Use recommended sizes: 500x500px for profile, 800x500px for projects
+   → Make sure profile is square and projects are rectangular
+
+🔧 File size too large?
+   → Compress images at: tinypng.com or compressor.io
+   → Keep images under 500KB for fast loading
+
+
+═══════════════════════════════════════════════════════════════════
+                    PRO TIPS
+═══════════════════════════════════════════════════════════════════
+
+💡 For profile picture:
+   • Use the same photo as your LinkedIn (consistency!)
+   • Make sure it's recent and professional
+   • Natural smile works better than serious look
+
+💡 For project images:
+   • Show the most impressive/visual part
+   • Include your project logo if you have one
+   • Data visualizations look great!
+   • Clean UI screenshots are perfect
+
+💡 General tips:
+   • Good lighting in photos
+   • High contrast = easier to see
+   • Avoid cluttered screenshots
+   • Show your best work!
+
+
+═══════════════════════════════════════════════════════════════════
+
+Questions about images? Check the main README.md file!
+
+Good luck! 🚀

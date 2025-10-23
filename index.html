@@ -1,0 +1,1377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atul Bhardwaj | Data Science Portfolio</title>
+    <style>
+        /* ============================================
+           GLOBAL STYLES & CSS VARIABLES
+           ============================================ */
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #0ea5e9;
+            --accent-color: #06b6d4;
+            --dark-bg: #0f172a;
+            --light-bg: #f8fafc;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --white: #ffffff;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 15px 40px rgba(37, 99, 235, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--light-bg);
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* ============================================
+           NAVIGATION BAR
+           ============================================ */
+        nav {
+            background: var(--dark-bg);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav ul li a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* ============================================
+           HERO SECTION
+           ============================================ */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            padding: 150px 2rem 80px;
+            text-align: center;
+            color: var(--white);
+            margin-top: 60px;
+        }
+
+        .hero .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* 
+        ============================================
+        PROFILE PICTURE SECTION
+        
+        TO ADD YOUR PROFILE PICTURE:
+        1. Save your profile picture in the same folder as this HTML file
+        2. Name it: profile.jpg (or profile.png)
+        3. Replace "profile.jpg" in the src attribute below
+        
+        Alternative: Use a direct image URL from:
+        - LinkedIn (right-click your profile pic > Copy image address)
+        - Google Drive (make sure it's publicly accessible)
+        - Any image hosting service
+        ============================================
+        */
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%; /* Makes it circular */
+            border: 5px solid var(--white);
+            object-fit: cover; /* Ensures image fills circle properly */
+            margin: 0 auto 2rem;
+            display: block;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: fadeInDown 1s ease;
+        }
+
+        .hero .tagline {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1.2s ease;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--white);
+            color: var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--primary-color);
+        }
+
+        /* ============================================
+           SECTION STYLES (Reusable)
+           ============================================ */
+        section {
+            padding: 80px 2rem;
+        }
+
+        section .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        section .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        /* ============================================
+           ABOUT SECTION
+           ============================================ */
+        .about {
+            background: var(--white);
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-light);
+        }
+
+        .about-content .highlight {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        /* ============================================
+           EXPERIENCE SECTION
+           ============================================ */
+        .experience {
+            background: var(--light-bg);
+        }
+
+        .timeline {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline-item {
+            background: var(--white);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover {
+            transform: translateX(10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .timeline-item h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-item .company {
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.3rem;
+        }
+
+        .timeline-item .date {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-item ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .timeline-item ul li {
+            padding-left: 1.5rem;
+            position: relative;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+        }
+
+        .timeline-item ul li:before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        /* 
+        ============================================
+        PROJECTS SECTION
+        
+        TO ADD PROJECT IMAGES:
+        1. Save project screenshots/images in the same folder
+        2. Name them: project1.jpg, project2.jpg, project3.jpg
+        3. Update the src attributes in the img tags below
+        
+        Recommended image size: 800x500px for best quality
+        ============================================
+        */
+        .projects {
+            background: var(--white);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .project-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        /* 
+        Project Image Styling
+        TO CHANGE PROJECT IMAGES:
+        - Replace "project1.jpg" with your actual image filename
+        - Or use a placeholder service like: https://via.placeholder.com/800x500
+        */
+        .project-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-bottom: 3px solid var(--primary-color);
+        }
+
+        .project-card .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-card h3 {
+            color: var(--text-dark);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-card .project-date {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-card p {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .project-card .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tech-badge {
+            background: var(--light-bg);
+            color: var(--primary-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-link {
+            padding: 0.6rem 1.5rem;
+            background: var(--primary-color);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .project-link:hover {
+            background: var(--secondary-color);
+            transform: scale(1.05);
+        }
+
+        /* ============================================
+           SKILLS SECTION
+           ============================================ */
+        .skills {
+            background: var(--light-bg);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .skill-category h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-category h3:before {
+            content: "●";
+            color: var(--secondary-color);
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category ul li {
+            padding: 0.5rem 0;
+            color: var(--text-light);
+            border-bottom: 1px solid var(--light-bg);
+        }
+
+        .skill-category ul li:last-child {
+            border-bottom: none;
+        }
+
+        /* ============================================
+           PUBLICATIONS SECTION
+           ============================================ */
+        .publications {
+            background: var(--white);
+        }
+
+        .publications-list {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .publication-item {
+            background: var(--light-bg);
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--accent-color);
+            transition: all 0.3s ease;
+        }
+
+        .publication-item:hover {
+            transform: translateX(10px);
+            box-shadow: var(--shadow);
+        }
+
+        .publication-item h3 {
+            color: var(--text-dark);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .publication-item .journal {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .publication-item p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* ============================================
+           CERTIFICATIONS SECTION
+           ============================================ */
+        .certifications {
+            background: var(--light-bg);
+        }
+
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .cert-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .cert-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .cert-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .cert-card h3 {
+            color: var(--text-dark);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cert-card .cert-issuer {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .cert-card .cert-date {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* ============================================
+           CONTACT SECTION
+           ============================================ */
+        .contact {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+        }
+
+        .contact h2 {
+            color: var(--white);
+        }
+
+        .contact .section-subtitle {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateX(10px);
+        }
+
+        .contact-item .icon {
+            font-size: 2rem;
+        }
+
+        .contact-item a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            color: var(--text-dark);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid var(--light-bg);
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--primary-color);
+            color: var(--white);
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+        }
+
+        /* ============================================
+           FOOTER
+           ============================================ */
+        footer {
+            background: var(--dark-bg);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+        }
+
+        footer p {
+            margin-bottom: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: var(--white);
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--secondary-color);
+            transform: scale(1.2);
+        }
+
+        /* ============================================
+           ANIMATIONS
+           ============================================ */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ============================================
+           RESPONSIVE DESIGN
+           ============================================ */
+        @media (max-width: 768px) {
+            nav .container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .tagline {
+                font-size: 1rem;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section h2 {
+                font-size: 2rem;
+            }
+        }
+
+        /* ============================================
+           UTILITY CLASSES
+           ============================================ */
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-2 {
+            margin-top: 2rem;
+        }
+
+        .mb-2 {
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- ============================================
+         NAVIGATION BAR
+         Edit the navigation links here
+         ============================================ -->
+    <nav>
+        <div class="container">
+            <a href="#" class="logo">Atul Bhardwaj</a>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ============================================
+         HERO SECTION
+         Main landing section with profile picture
+         ============================================ -->
+    <section class="hero">
+        <div class="container">
+            <!-- 
+            ============================================
+            TO ADD YOUR PROFILE PICTURE:
+            1. Save your photo as "profile.jpg" in the same folder as this HTML file
+            2. Or replace "profile.jpg" below with your image filename
+            3. Recommended size: 500x500px or larger (square image works best)
+            
+            Alternative: Use an image URL:
+            - Right-click your LinkedIn profile picture > "Copy image address"
+            - Replace "https://media.licdn.com/dms/image/v2/D5603AQE_6s3qOMT__w/profile-displayphoto-crop_800_800/B56Zmgf27YIsAI-/0/1759334330467?e=1762992000&v=beta&t=tVXK7FgEX0dnSD0W63Kkvgw5TyVOTIz_1yquEMGca-U" with that URL
+            ============================================
+            -->
+            <img src="https://media.licdn.com/dms/image/v2/D5603AQE_6s3qOMT__w/profile-displayphoto-crop_800_800/B56Zmgf27YIsAI-/0/1759334330467?e=1762992000&v=beta&t=tVXK7FgEX0dnSD0W63Kkvgw5TyVOTIz_1yquEMGca-U" alt="Atul Bhardwaj Profile Picture" class="profile-img">
+            
+            <h1>Atul Bhardwaj</h1>
+            <p class="tagline">Data Science Graduate Student | Machine Learning Enthusiast | Turning Data into Impact</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                <a href="Atul_Bhardwaj_Resume.pdf" class="btn btn-secondary" download>Download Resume</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         ABOUT SECTION
+         ============================================ -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p class="section-subtitle">Driven by data. Focused on impact.</p>
+            <div class="about-content">
+                <p>
+                    I'm a Computer Science graduate student specializing in <span class="highlight">Data Science at Seattle University</span>, 
+                    driven by the belief that data shouldn't just inform—it should create real-world change.
+                </p>
+                <p>
+                    From predicting heart disease to optimizing customer retention, my projects focus on one thing: 
+                    <span class="highlight">using data to solve problems that matter</span>. Whether it's clustering patients for better care 
+                    or visualizing campus trends to improve student services, I'm always looking for patterns that lead to impact.
+                </p>
+                <p>
+                    I've worked across research, analytics, and mission-driven initiatives, publishing machine learning research, 
+                    leading student outreach strategy, and contributing to ESG reporting efforts. My daily toolkit includes 
+                    <span class="highlight">Python, SQL, Power BI, Tableau, and TensorFlow</span>, but it's curiosity, empathy, 
+                    and clarity that guide how I use them.
+                </p>
+                <p>
+                    Right now, I'm exploring opportunities where I can apply data skills in service of people and the planet, 
+                    especially in <span class="highlight">energy, healthcare, or public-interest spaces</span>.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         EXPERIENCE SECTION
+         Edit your work experiences here
+         ============================================ -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2>Professional Experience</h2>
+            <p class="section-subtitle">Building impact through data-driven solutions</p>
+            
+            <div class="timeline">
+                <!-- Experience 1 -->
+                <div class="timeline-item">
+                    <h3>Data Science Consultant</h3>
+                    <p class="company">Statistics Without Borders</p>
+                    <p class="date">September 2025 - Present | Seattle, WA</p>
+                    <ul>
+                        <li>Drove strategic insights for Women in Sport by analyzing 14+ survey datasets (n > 2,200) using Python, SQL, and statistical modeling (logistic regression, factor analysis, clustering)</li>
+                        <li>Translated complex statistical results into executive-ready visualizations and presentations, enabling non-technical stakeholders to make data-driven decisions</li>
+                        <li>Mentored 7 cross-functional project teams on reproducible data workflows, statistical best practices, and compelling data storytelling</li>
+                    </ul>
+                </div>
+
+                <!-- Experience 2 -->
+                <div class="timeline-item">
+                    <h3>Data & Service Operations Assistant</h3>
+                    <p class="company">Seattle University</p>
+                    <p class="date">June 2025 - Present | Seattle, WA</p>
+                    <ul>
+                        <li>Reduced guest parking complaints by 80% by analyzing seasonal demand patterns in Power BI and Python</li>
+                        <li>Applied Gaussian Mixture Model (GMM) clustering to segment 5 distinct departmental behavior patterns, reducing unnecessary support tickets by 25%</li>
+                        <li>Automated data extraction from Microsoft Access databases using optimized SQL queries, improving data accuracy from 85% to 100%</li>
+                        <li>Saved 30-40 staff hours per month through process automation and workflow optimization</li>
+                    </ul>
+                </div>
+
+                <!-- Experience 3 -->
+                <div class="timeline-item">
+                    <h3>Research Assistant</h3>
+                    <p class="company">Seattle University</p>
+                    <p class="date">December 2024 - March 2025 | Seattle, WA</p>
+                    <ul>
+                        <li>Conducted health risk prediction modeling research using machine learning techniques</li>
+                        <li>Collaborated with faculty on developing predictive models for clinical decision support</li>
+                    </ul>
+                </div>
+
+                <!-- Experience 4 -->
+                <div class="timeline-item">
+                    <h3>Data Science Club Captain</h3>
+                    <p class="company">Ganga Institute of Technology & Management</p>
+                    <p class="date">November 2022 - May 2024 | India</p>
+                    <ul>
+                        <li>Led and motivated 100+ members of the Data Science Club, organizing successful webinars and events</li>
+                        <li>Developed innovative strategies to enhance learning experience through guest speaker sessions, daily quizzes, and coding competitions</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         PROJECTS SECTION
+         
+         TO ADD PROJECT IMAGES:
+         1. Save your project screenshots as:
+            - project1.jpg (for SmartStock)
+            - project2.jpg (for TF-IDF Search Engine)
+            - project3.jpg (for Heart Disease Predictor)
+         2. Place them in the same folder as this HTML file
+         3. Images should be rectangular (recommended: 800x500px)
+         
+         TO UPDATE PROJECT LINKS:
+         - Replace the href="#" with your actual GitHub repository URLs
+         ============================================ -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2>Featured Projects</h2>
+            <p class="section-subtitle">Solving real-world problems with data and code</p>
+            
+            <div class="projects-grid">
+                <!-- Project 1: SmartStock -->
+                <div class="project-card">
+                    <!-- 
+                    TO ADD PROJECT IMAGE:
+                    Replace "project1.jpg" with your actual image file
+                    Or use: https://via.placeholder.com/800x500/2563eb/ffffff?text=SmartStock
+                    -->
+                    <img src="project1.jpg" alt="SmartStock Project Screenshot">
+                    <div class="project-content">
+                        <h3>SmartStock – Automated Inventory & Ordering SaaS</h3>
+                        <p class="project-date">In Progress | September 2025</p>
+                        <p>
+                            Cloud-native SaaS solution on Microsoft Azure, integrating Azure Functions, Cosmos DB, and App Service 
+                            for real-time inventory tracking and automatic reordering. Features microservice-based APIs and Power BI dashboards.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-badge">Azure</span>
+                            <span class="tech-badge">Cosmos DB</span>
+                            <span class="tech-badge">Power BI</span>
+                            <span class="tech-badge">Microservices</span>
+                        </div>
+                        <div class="project-links">
+                            <!-- Edit the link below with your GitHub repository URL -->
+                            <a href="https://github.com/4uatul" class="project-link" target="_blank">View on GitHub →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: TF-IDF Search Engine -->
+                <div class="project-card">
+                    <!-- 
+                    TO ADD PROJECT IMAGE:
+                    Replace "project2.jpg" with your actual image file
+                    -->
+                    <img src="project2.jpg" alt="TF-IDF Search Engine Project Screenshot">
+                    <div class="project-content">
+                        <h3>Real-Time TF-IDF Search Engine</h3>
+                        <p class="project-date">March 2025</p>
+                        <p>
+                            Scalable distributed search engine on AWS infrastructure (EMR, EC2, S3, DynamoDB, Lambda) using Apache Spark 
+                            for parallel processing. Implemented TF-IDF-based document ranking algorithm for fast, relevant search results.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-badge">AWS</span>
+                            <span class="tech-badge">Apache Spark</span>
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">Big Data</span>
+                        </div>
+                        <div class="project-links">
+                            <!-- Edit the link below with your GitHub repository URL -->
+                            <a href="https://github.com/4uatul" class="project-link" target="_blank">View on GitHub →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Heart Disease Predictor -->
+                <div class="project-card">
+                    <!-- 
+                    TO ADD PROJECT IMAGE:
+                    Replace "project3.jpg" with your actual image file
+                    -->
+                    <img src="project3.jpg" alt="Heart Disease Predictor Project Screenshot">
+                    <div class="project-content">
+                        <h3>Heart Disease Predictor</h3>
+                        <p class="project-date">September 2024</p>
+                        <p>
+                            Developed and compared 6 supervised learning models on 304 patient records, optimizing precision, recall, and F1-score 
+                            to minimize false negatives for clinical decision support. Published findings in IEEE Xplore.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-badge">Machine Learning</span>
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">Healthcare</span>
+                            <span class="tech-badge">Research</span>
+                        </div>
+                        <div class="project-links">
+                            <!-- Edit the link below with your GitHub repository URL -->
+                            <a href="https://github.com/4uatul" class="project-link" target="_blank">View on GitHub →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SKILLS SECTION
+         Edit your skills here - add or remove as needed
+         ============================================ -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2>Technical Skills</h2>
+            <p class="section-subtitle">Tools and technologies I work with</p>
+            
+            <div class="skills-grid">
+                <!-- Programming Languages -->
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>SQL</li>
+                        <li>R</li>
+                        <li>C++</li>
+                        <li>Java</li>
+                        <li>JavaScript</li>
+                        <li>Node.js</li>
+                    </ul>
+                </div>
+
+                <!-- Machine Learning -->
+                <div class="skill-category">
+                    <h3>Machine Learning</h3>
+                    <ul>
+                        <li>Scikit-learn</li>
+                        <li>TensorFlow</li>
+                        <li>PyTorch</li>
+                        <li>Time-Series Forecasting</li>
+                        <li>Clustering (K-Means, GMM)</li>
+                        <li>Statistical Modeling</li>
+                    </ul>
+                </div>
+
+                <!-- Data Analytics -->
+                <div class="skill-category">
+                    <h3>Data Analytics & Visualization</h3>
+                    <ul>
+                        <li>Tableau</li>
+                        <li>Power BI</li>
+                        <li>D3.js</li>
+                        <li>Matplotlib</li>
+                        <li>Seaborn</li>
+                        <li>Plotly</li>
+                    </ul>
+                </div>
+
+                <!-- Databases -->
+                <div class="skill-category">
+                    <h3>Databases</h3>
+                    <ul>
+                        <li>PostgreSQL</li>
+                        <li>MySQL</li>
+                        <li>DynamoDB</li>
+                        <li>CosmosDB</li>
+                        <li>Hive (HQL)</li>
+                        <li>Microsoft Access</li>
+                    </ul>
+                </div>
+
+                <!-- Cloud & Big Data -->
+                <div class="skill-category">
+                    <h3>Cloud & Big Data</h3>
+                    <ul>
+                        <li>AWS (EC2, EMR, Lambda, S3)</li>
+                        <li>Azure (Functions, App Service)</li>
+                        <li>Apache Spark</li>
+                        <li>Hadoop</li>
+                        <li>Distributed Systems</li>
+                    </ul>
+                </div>
+
+                <!-- Soft Skills -->
+                <div class="skill-category">
+                    <h3>Professional Skills</h3>
+                    <ul>
+                        <li>Statistical Data Analysis</li>
+                        <li>Data Storytelling</li>
+                        <li>Cross-functional Collaboration</li>
+                        <li>Leadership & Mentoring</li>
+                        <li>Problem Solving</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         PUBLICATIONS SECTION
+         Add links to your actual publications
+         ============================================ -->
+    <section id="publications" class="publications">
+        <div class="container">
+            <h2>Publications</h2>
+            <p class="section-subtitle">Research contributions to the field</p>
+            
+            <div class="publications-list">
+                <!-- Publication 1 -->
+                <div class="publication-item">
+                    <h3>Evaluating ML Algorithms for Heart Disease Prediction</h3>
+                    <p class="journal">IEEE Xplore, 2024</p>
+                    <p>
+                        Comprehensive evaluation of six supervised machine learning algorithms for predicting heart disease, 
+                        focusing on precision, recall, and F1-score optimization to minimize false negatives in clinical decision support systems.
+                    </p>
+                </div>
+
+                <!-- Publication 2 -->
+                <div class="publication-item">
+                    <h3>Bidirectional LSTM for Toxic Comment Classification</h3>
+                    <p class="journal">EAI Journal, 2024</p>
+                    <p>
+                        Novel approach using Bidirectional LSTM with Convolution for identifying and classifying toxic comments in online platforms, 
+                        demonstrating improved performance in natural language processing tasks.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         CERTIFICATIONS SECTION
+         Add or remove certifications as needed
+         ============================================ -->
+    <section id="certifications" class="certifications">
+        <div class="container">
+            <h2>Certifications</h2>
+            <p class="section-subtitle">Continuous learning and professional development</p>
+            
+            <div class="certifications-grid">
+                <!-- Certification 1 -->
+                <div class="cert-card">
+                    <div class="cert-icon">☁️</div>
+                    <h3>AWS Cloud Practitioner</h3>
+                    <p class="cert-issuer">Amazon Web Services</p>
+                    <p class="cert-date">Courses 1-4 | Expected: November 2025</p>
+                </div>
+
+                <!-- Certification 2 -->
+                <div class="cert-card">
+                    <div class="cert-icon">🤖</div>
+                    <h3>AWS AI Practitioner</h3>
+                    <p class="cert-issuer">Amazon Web Services</p>
+                    <p class="cert-date">Courses 1-5 | Expected: November 2025</p>
+                </div>
+
+                <!-- Certification 3 -->
+                <div class="cert-card">
+                    <div class="cert-icon">📊</div>
+                    <h3>Data Science Methodology</h3>
+                    <p class="cert-issuer">IBM / Coursera</p>
+                    <p class="cert-date">2024</p>
+                </div>
+
+                <!-- Certification 4 -->
+                <div class="cert-card">
+                    <div class="cert-icon">🧠</div>
+                    <h3>Introduction to Machine Learning</h3>
+                    <p class="cert-issuer">Microsoft / LinkedIn Learning</p>
+                    <p class="cert-date">2024</p>
+                </div>
+
+                <!-- Certification 5 -->
+                <div class="cert-card">
+                    <div class="cert-icon">🔬</div>
+                    <h3>What is Data Science?</h3>
+                    <p class="cert-issuer">IBM / Coursera</p>
+                    <p class="cert-date">2023</p>
+                </div>
+
+                <!-- Certification 6 -->
+                <div class="cert-card">
+                    <div class="cert-icon">🛠️</div>
+                    <h3>Tools for Data Science</h3>
+                    <p class="cert-issuer">IBM / Coursera</p>
+                    <p class="cert-date">2023</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         CONTACT SECTION
+         Edit your contact information here
+         ============================================ -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p class="section-subtitle">Let's connect and create something impactful together</p>
+            
+            <div class="contact-content">
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="icon">📧</span>
+                        <div>
+                            <strong>Email</strong><br>
+                            <a href="mailto:mail@atulbhardwaj.com">mail@atulbhardwaj.com</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <span class="icon">📍</span>
+                        <div>
+                            <strong>Location</strong><br>
+                            Seattle, Washington, USA
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <span class="icon">💼</span>
+                        <div>
+                            <strong>LinkedIn</strong><br>
+                            <a href="https://www.linkedin.com/in/atul1000" target="_blank">linkedin.com/in/atul1000</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <span class="icon">💻</span>
+                        <div>
+                            <strong>GitHub</strong><br>
+                            <a href="https://github.com/4uatul" target="_blank">github.com/4uatul</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <span class="icon">📱</span>
+                        <div>
+                            <strong>Phone</strong><br>
+                            <a href="tel:+12066094655">+1 (206) 609-4655</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required placeholder="Your Name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required placeholder="What's this about?">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required placeholder="Your message here..."></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Atul Bhardwaj. All rights reserved.</p>
+            <p>Built with passion for data and impact. Let's turn insights into action.</p>
+            
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/atul1000" target="_blank" title="LinkedIn">💼</a>
+                <a href="https://github.com/4uatul" target="_blank" title="GitHub">💻</a>
+                <a href="mailto:mail@atulbhardwaj.com" title="Email">📧</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================
+         JAVASCRIPT FOR CONTACT FORM
+         This handles the form submission
+         ============================================ -->
+    <script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Contact form submission handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Create mailto link (this will open the user's email client)
+            const mailtoLink = `mailto:mail@atulbhardwaj.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+
+            // Open email client
+            window.location.href = mailtoLink;
+            
+            // Show success message
+            alert('Thank you for reaching out! Your email client should open now. If it doesn\'t, please email me directly at mail@atulbhardwaj.com');
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all timeline items and project cards
+        document.querySelectorAll('.timeline-item, .project-card, .skill-category, .cert-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
