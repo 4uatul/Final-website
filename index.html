@@ -86,6 +86,38 @@
         }
 
         /* ============================================
+           HAMBURGER MENU (Mobile Only)
+           ============================================ */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--white);
+            margin: 3px 0;
+            transition: all 0.3s ease;
+            border-radius: 3px;
+        }
+
+        /* Hamburger animation when active */
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* ============================================
            HERO SECTION
            ============================================ */
         .hero {
@@ -731,16 +763,41 @@
         /* ============================================
            RESPONSIVE DESIGN
            ============================================ */
+        /* ============================================
+           MOBILE RESPONSIVE DESIGN - HAMBURGER MENU
+           ============================================ */
         @media (max-width: 768px) {
-            nav .container {
-                flex-direction: column;
-                gap: 1rem;
+            /* Show hamburger menu on mobile */
+            .hamburger {
+                display: flex;
             }
 
+            /* Hide desktop menu by default on mobile */
             nav ul {
+                position: fixed;
+                left: -100%;
+                top: 60px;
                 flex-direction: column;
-                gap: 1rem;
+                background-color: var(--dark-bg);
+                width: 100%;
                 text-align: center;
+                transition: left 0.3s ease;
+                box-shadow: var(--shadow);
+                padding: 2rem 0;
+                gap: 1.5rem;
+            }
+
+            /* Show menu when active */
+            nav ul.active {
+                left: 0;
+            }
+
+            nav .container {
+                padding: 0 1rem;
+            }
+
+            .hero {
+                padding: 120px 2rem 60px;
             }
 
             .hero h1 {
@@ -788,7 +845,15 @@
     <nav>
         <div class="container">
             <a href="#" class="logo">Atul Bhardwaj</a>
-            <ul>
+            
+            <!-- Hamburger Menu Icon (Mobile Only) -->
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <ul id="nav-menu">
                 <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
@@ -815,7 +880,7 @@
             
             Alternative: Use an image URL:
             - Right-click your LinkedIn profile picture > "Copy image address"
-            - Replace "https://media.licdn.com/dms/image/v2/D5603AQE_6s3qOMT__w/profile-displayphoto-crop_800_800/B56Zmgf27YIsAI-/0/1759334330467?e=1762992000&v=beta&t=tVXK7FgEX0dnSD0W63Kkvgw5TyVOTIz_1yquEMGca-U" with that URL
+            - Replace "profile.jpg" with that URL
             ============================================
             -->
             <img src="https://media.licdn.com/dms/image/v2/D5603AQE_6s3qOMT__w/profile-displayphoto-crop_800_800/B56Zmgf27YIsAI-/0/1759334330467?e=1762992000&v=beta&t=tVXK7FgEX0dnSD0W63Kkvgw5TyVOTIz_1yquEMGca-U" alt="Atul Bhardwaj Profile Picture" class="profile-img">
@@ -1118,7 +1183,7 @@
     <!-- ============================================
          PUBLICATIONS SECTION
          Add links to your actual publications
-         ============================================ -->
+         ============================================ -->       
     <section id="publications" class="publications">
         <div class="container">
             <h2>Publications</h2>
@@ -1128,7 +1193,9 @@
                 <!-- Publication 1 -->
                 <div class="publication-item">
                     <h3>Evaluating ML Algorithms for Heart Disease Prediction</h3>
-                    <p class="journal">IEEE Xplore, 2024</p>
+                    <p class="journal">IEEE Xplore, 2024
+                    | <a href="https://ieeexplore.ieee.org/document/10306927" target="_blank" style="color: var(--secondary-color); text-decoration: none; font-weight: 600;">Read Paper →</a>
+                    </p>
                     <p>
                         Comprehensive evaluation of six supervised machine learning algorithms for predicting heart disease, 
                         focusing on precision, recall, and F1-score optimization to minimize false negatives in clinical decision support systems.
@@ -1138,7 +1205,9 @@
                 <!-- Publication 2 -->
                 <div class="publication-item">
                     <h3>Bidirectional LSTM for Toxic Comment Classification</h3>
-                    <p class="journal">EAI Journal, 2024</p>
+                    <p class="journal">EAI Journal, 2024
+                    |  <a href="https://eudl.eu/doi/10.4108/eai.23-11-2023.2343140" target="_blank" style="color: var(--secondary-color); text-decoration: none; font-weight: 600;">Read Paper →</a>
+                    </p>
                     <p>
                         Novel approach using Bidirectional LSTM with Convolution for identifying and classifying toxic comments in online platforms, 
                         demonstrating improved performance in natural language processing tasks.
@@ -1313,7 +1382,36 @@
          This handles the form submission
          ============================================ -->
     <script>
-        // Smooth scroll for navigation links
+        // ============================================
+        // HAMBURGER MENU TOGGLE (Mobile)
+        // ============================================
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('#nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+
+        // ============================================
+        // SMOOTH SCROLL FOR NAVIGATION LINKS
+        // ============================================
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1339,7 +1437,7 @@
             
             // Create mailto link (this will open the user's email client)
             const mailtoLink = `mailto:mail@atulbhardwaj.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
-
+            
             // Open email client
             window.location.href = mailtoLink;
             
