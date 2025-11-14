@@ -377,7 +377,7 @@
         */
         .project-card img {
             width: 100%;
-            height: 310px;
+            height: 250px;
             object-fit: cover;
             border-bottom: 3px solid var(--primary-color);
         }
@@ -457,25 +457,21 @@
             display: grid;
             grid-template-columns: 280px 1fr;
             gap: 3rem;
-            padding: 2.5rem;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(248, 250, 252, 0.9));
-            border-radius: 15px;
-            border: 2px solid rgba(37, 99, 235, 0.08);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            padding: 2rem 0;
+            border-bottom: 2px solid #e2e8f0;
             align-items: start;
-            transition: all 0.4s ease;
+            transition: all 0.3s ease;
         }
 
         .skill-row:last-child {
-            margin-bottom: 0;
+            border-bottom: none;
         }
 
         .skill-row:hover {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 1), rgba(248, 250, 252, 1));
-            border-color: rgba(37, 99, 235, 0.2);
-            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.12);
-            transform: translateY(-2px);
+            background: rgba(37, 99, 235, 0.02);
+            padding-left: 1rem;
+            padding-right: 1rem;
+            border-radius: 10px;
         }
 
         .skill-category-name {
@@ -485,29 +481,26 @@
 
         .skill-category-name h3 {
             color: var(--primary-color);
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: 700;
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.5rem;
             display: flex;
             align-items: center;
-            gap: 1rem;
-            letter-spacing: -0.5px;
+            gap: 0.75rem;
         }
 
         .skill-category-name h3::before {
             content: '';
-            width: 5px;
-            height: 35px;
+            width: 4px;
+            height: 30px;
             background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
-            border-radius: 4px;
-            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+            border-radius: 3px;
         }
 
         .skill-category-name p {
             color: var(--text-light);
             font-size: 0.95rem;
             line-height: 1.6;
-            font-weight: 500;
         }
 
         .skill-items {
@@ -517,46 +510,30 @@
         }
 
         .skill-item {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 1), rgba(248, 250, 252, 1));
-            padding: 0.8rem 1.4rem;
-            border-radius: 10px;
+            background: var(--white);
+            padding: 0.7rem 1.3rem;
+            border-radius: 8px;
             color: var(--text-dark);
-            font-weight: 600;
+            font-weight: 500;
             font-size: 0.95rem;
-            border: 2px solid rgba(37, 99, 235, 0.15);
+            border: 2px solid #e2e8f0;
             transition: all 0.3s ease;
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .skill-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.1), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .skill-item:hover::before {
-            left: 100%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
         }
 
         .skill-item:hover {
             border-color: var(--primary-color);
-            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(14, 165, 233, 0.1));
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 6px 16px rgba(37, 99, 235, 0.25);
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(14, 165, 233, 0.05));
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
             color: var(--primary-color);
         }
 
-        /* Color variations for different skill categories */
+        /* Color variations for different rows */
         .skill-row:nth-child(1) .skill-category-name h3 {
             color: #2563eb;
         }
+
         .skill-row:nth-child(1) .skill-category-name h3::before {
             background: linear-gradient(180deg, #2563eb, #3b82f6);
         }
@@ -564,6 +541,7 @@
         .skill-row:nth-child(2) .skill-category-name h3 {
             color: #0ea5e9;
         }
+
         .skill-row:nth-child(2) .skill-category-name h3::before {
             background: linear-gradient(180deg, #0ea5e9, #06b6d4);
         }
@@ -571,6 +549,7 @@
         .skill-row:nth-child(3) .skill-category-name h3 {
             color: #8b5cf6;
         }
+
         .skill-row:nth-child(3) .skill-category-name h3::before {
             background: linear-gradient(180deg, #8b5cf6, #a78bfa);
         }
@@ -578,6 +557,7 @@
         .skill-row:nth-child(4) .skill-category-name h3 {
             color: #10b981;
         }
+
         .skill-row:nth-child(4) .skill-category-name h3::before {
             background: linear-gradient(180deg, #10b981, #34d399);
         }
@@ -585,15 +565,17 @@
         .skill-row:nth-child(5) .skill-category-name h3 {
             color: #f59e0b;
         }
+
         .skill-row:nth-child(5) .skill-category-name h3::before {
             background: linear-gradient(180deg, #f59e0b, #fbbf24);
         }
 
         .skill-row:nth-child(6) .skill-category-name h3 {
-            color: #6366f1;
+            color: #ec4899;
         }
+
         .skill-row:nth-child(6) .skill-category-name h3::before {
-            background: linear-gradient(180deg, #6366f1, #818cf8);
+            background: linear-gradient(180deg, #ec4899, #f472b6);
         }
 
         /* Responsive design */
@@ -1119,119 +1101,6 @@
     </section>
 
     <!-- ============================================
-         SKILLS SECTION - Two Column Layout
-         ============================================ -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2>Technical Skills</h2>
-            <p class="section-subtitle">Tools and technologies I work with</p>
-
-            <div class="skills-list">
-                <!-- Programming Languages -->
-                <div class="skill-row">
-                    <div class="skill-category-name">
-                        <h3>Programming Languages</h3>
-                        <p>Versatile coding expertise across multiple paradigms</p>
-                    </div>
-                    <div class="skill-items">
-                        <span class="skill-item">Python</span>
-                        <span class="skill-item">SQL</span>
-                        <span class="skill-item">R</span>
-                        <span class="skill-item">C++</span>
-                        <span class="skill-item">Java</span>
-                        <span class="skill-item">JavaScript</span>
-                        <span class="skill-item">Node.js</span>
-                    </div>
-                </div>
-
-                <!-- Machine Learning -->
-                <div class="skill-row">
-                    <div class="skill-category-name">
-                        <h3>Machine Learning</h3>
-                        <p>Advanced ML frameworks and algorithms</p>
-                    </div>
-                    <div class="skill-items">
-                        <span class="skill-item">Scikit-learn</span>
-                        <span class="skill-item">TensorFlow</span>
-                        <span class="skill-item">PyTorch</span>
-                        <span class="skill-item">Time-Series Forecasting</span>
-                        <span class="skill-item">K-Means Clustering</span>
-                        <span class="skill-item">GMM</span>
-                        <span class="skill-item">Statistical Modeling</span>
-                    </div>
-                </div>
-
-                <!-- Data Analytics & Visualization -->
-                <div class="skill-row">
-                    <div class="skill-category-name">
-                        <h3>Data Analytics & Visualization</h3>
-                        <p>Transforming data into actionable insights</p>
-                    </div>
-                    <div class="skill-items">
-                        <span class="skill-item">Tableau</span>
-                        <span class="skill-item">Power BI</span>
-                        <span class="skill-item">D3.js</span>
-                        <span class="skill-item">Matplotlib</span>
-                        <span class="skill-item">Seaborn</span>
-                        <span class="skill-item">Plotly</span>
-                    </div>
-                </div>
-
-                <!-- Databases -->
-                <div class="skill-row">
-                    <div class="skill-category-name">
-                        <h3>Databases</h3>
-                        <p>SQL and NoSQL data management systems</p>
-                    </div>
-                    <div class="skill-items">
-                        <span class="skill-item">PostgreSQL</span>
-                        <span class="skill-item">MySQL</span>
-                        <span class="skill-item">DynamoDB</span>
-                        <span class="skill-item">CosmosDB</span>
-                        <span class="skill-item">Hive (HQL)</span>
-                        <span class="skill-item">Microsoft Access</span>
-                    </div>
-                </div>
-
-                <!-- Cloud & Big Data -->
-                <div class="skill-row">
-                    <div class="skill-category-name">
-                        <h3>Cloud & Big Data</h3>
-                        <p>Scalable infrastructure and distributed computing</p>
-                    </div>
-                    <div class="skill-items">
-                        <span class="skill-item">AWS EC2</span>
-                        <span class="skill-item">AWS EMR</span>
-                        <span class="skill-item">AWS Lambda</span>
-                        <span class="skill-item">AWS S3</span>
-                        <span class="skill-item">Azure Functions</span>
-                        <span class="skill-item">Azure App Service</span>
-                        <span class="skill-item">Apache Spark</span>
-                        <span class="skill-item">Hadoop</span>
-                        <span class="skill-item">Distributed Systems</span>
-                    </div>
-                </div>
-
-                <!-- Professional Skills -->
-                <div class="skill-row">
-                    <div class="skill-category-name">
-                        <h3>Professional Expertise</h3>
-                        <p>Core competencies in data-driven environments</p>
-                    </div>
-                    <div class="skill-items">
-                        <span class="skill-item">Statistical Analysis</span>
-                        <span class="skill-item">Data Storytelling</span>
-                        <span class="skill-item">Cross-functional Collaboration</span>
-                        <span class="skill-item">Leadership & Mentoring</span>
-                        <span class="skill-item">Problem Solving</span>
-                        <span class="skill-item">Technical Documentation</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================
          EXPERIENCE SECTION
          Edit your work experiences here
          ============================================ -->
@@ -1308,45 +1177,24 @@
             <p class="section-subtitle">Solving real-world problems with data and code</p>
 
             <!-- ============================================
-                 AI/ML PROJECTS - LEAD WITH MOST IMPRESSIVE
+                 DATA SCIENCE PROJECTS
                  ============================================ -->
-            <h3 style="color: var(--primary-color); font-size: 1.8rem; margin: 3rem 0 1.5rem 0; text-align: center;">AI/ML Projects</h3>
+            <h3 style="color: var(--primary-color); font-size: 1.8rem; margin: 3rem 0 1.5rem 0; text-align: center;">Data Science Projects</h3>
             <div class="projects-grid">
-                <!-- AI/ML Project 1 -->
+                <!-- Data Science Project 1 -->
                 <div class="project-card">
-                    <img src="ai-project1.jpg" alt="Amazon Lex Banking Chatbot Screenshot">
+                    <img src="ds-project1.jpg" alt="Data Science Project 1 Screenshot">
                     <div class="project-content">
-                        <h3>Amazon Lex Banking Chatbot Development</h3>
-                        <p class="project-date">November 2025</p>
-                        <p>
-                            Built conversational AI chatbot using Amazon Lex with custom intents, slots, and NLU capabilities to handle banking transactions and account inquiries.
-                            Integrated AWS Lambda functions via code hooks to generate dynamic responses and implemented context tags for stateful multi-turn conversations.
-                            Deployed chatbot infrastructure as code using AWS CloudFormation, reducing deployment time to 5 minutes with proper IAM configuration.
-                        </p>
-                        <div class="tech-stack">
-                            <span class="tech-badge">Amazon Lex</span>
-                            <span class="tech-badge">NLU</span>
-                            <span class="tech-badge">AWS Lambda</span>
-                            <span class="tech-badge">CloudFormation</span>
-                            <span class="tech-badge">Conversational AI</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- AI/ML Project 2 -->
-                <div class="project-card">
-                    <img src="ai-project2.jpg" alt="AI/ML Project 2 Screenshot">
-                    <div class="project-content">
-                        <h3>Project Title 2</h3>
+                        <h3>Project Title 1</h3>
                         <p class="project-date">Month Year</p>
                         <p>
-                            Project description goes here. Describe what the AI/ML model does, the techniques used,
-                            and the problem it solves.
+                            Project description goes here. Describe what the project does, the problem it solves,
+                            and the key techniques or algorithms used.
                         </p>
                         <div class="tech-stack">
-                            <span class="tech-badge">PyTorch</span>
-                            <span class="tech-badge">Computer Vision</span>
-                            <span class="tech-badge">CNN</span>
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">Pandas</span>
+                            <span class="tech-badge">Scikit-learn</span>
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/4uatul/project-name" class="project-link" target="_blank">View on GitHub →</a>
@@ -1354,20 +1202,20 @@
                     </div>
                 </div>
 
-                <!-- AI/ML Project 3 -->
+                <!-- Data Science Project 2 -->
                 <div class="project-card">
-                    <img src="ai-project3.jpg" alt="AI/ML Project 3 Screenshot">
+                    <img src="ds-project2.jpg" alt="Data Science Project 2 Screenshot">
                     <div class="project-content">
-                        <h3>Project Title 3</h3>
+                        <h3>Project Title 2</h3>
                         <p class="project-date">Month Year</p>
                         <p>
-                            Project description goes here. Describe what the AI/ML model does, the techniques used,
-                            and the problem it solves (e.g., sentiment analysis, recommendation systems, etc.).
+                            Project description goes here. Describe what the project does, the problem it solves,
+                            and the key techniques or algorithms used.
                         </p>
                         <div class="tech-stack">
-                            <span class="tech-badge">Scikit-learn</span>
-                            <span class="tech-badge">Machine Learning</span>
                             <span class="tech-badge">Python</span>
+                            <span class="tech-badge">Pandas</span>
+                            <span class="tech-badge">Scikit-learn</span>
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/4uatul/project-name" class="project-link" target="_blank">View on GitHub →</a>
@@ -1377,47 +1225,24 @@
             </div>
 
             <!-- ============================================
-                 DATA ENGINEERING & CLOUD PROJECTS
+                 CLOUD PROJECTS
                  ============================================ -->
-            <h3 style="color: var(--primary-color); font-size: 1.8rem; margin: 3rem 0 1.5rem 0; text-align: center;">Data Engineering & Cloud Projects</h3>
+            <h3 style="color: var(--primary-color); font-size: 1.8rem; margin: 3rem 0 1.5rem 0; text-align: center;">Cloud Projects</h3>
             <div class="projects-grid">
-                <!-- Data Engineering/Cloud Project 1 -->
+                <!-- Cloud Project 1 -->
                 <div class="project-card">
-                    <img src="de-project1.jpg" alt="Real-Time TF-IDF Search Engine Screenshot">
+                    <img src="cloud-project1.jpg" alt="Cloud Project 1 Screenshot">
                     <div class="project-content">
-                        <h3>Real-Time TF-IDF Search Engine</h3>
-                        <p class="project-date">March 2025</p>
-                        <p>
-                            Deployed a scalable distributed search engine on AWS infrastructure (EMR, EC2, S3, DynamoDB, Lambda)
-                            using Apache Spark for parallel processing, demonstrating production-level cloud architecture and big data
-                            processing capabilities. Implemented TF-IDF-based document ranking algorithm in Python, processing large-scale
-                            text datasets to deliver fast, relevant search results in real-time.
-                        </p>
-                        <div class="tech-stack">
-                            <span class="tech-badge">Apache Spark</span>
-                            <span class="tech-badge">AWS EMR</span>
-                            <span class="tech-badge">AWS Lambda</span>
-                            <span class="tech-badge">DynamoDB</span>
-                            <span class="tech-badge">Python</span>
-                            <span class="tech-badge">TF-IDF</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Data Engineering/Cloud Project 2 -->
-                <div class="project-card">
-                    <img src="de-project2.jpg" alt="Data Engineering Project 2 Screenshot">
-                    <div class="project-content">
-                        <h3>Project Title 2</h3>
+                        <h3>Project Title 1</h3>
                         <p class="project-date">Month Year</p>
                         <p>
-                            Project description goes here. Describe the data pipeline, ETL processes,
-                            cloud infrastructure, and scalability implemented.
+                            Project description goes here. Describe what the project does, the cloud services used,
+                            and the architecture implemented.
                         </p>
                         <div class="tech-stack">
-                            <span class="tech-badge">Airflow</span>
-                            <span class="tech-badge">AWS S3</span>
-                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">AWS</span>
+                            <span class="tech-badge">Lambda</span>
+                            <span class="tech-badge">S3</span>
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/4uatul/project-name" class="project-link" target="_blank">View on GitHub →</a>
@@ -1425,15 +1250,15 @@
                     </div>
                 </div>
 
-                <!-- Data Engineering/Cloud Project 3 -->
+                <!-- Cloud Project 2 -->
                 <div class="project-card">
-                    <img src="de-project3.jpg" alt="Data Engineering Project 3 Screenshot">
+                    <img src="cloud-project2.jpg" alt="Cloud Project 2 Screenshot">
                     <div class="project-content">
-                        <h3>Project Title 3</h3>
+                        <h3>Project Title 2</h3>
                         <p class="project-date">Month Year</p>
                         <p>
-                            Project description goes here. Describe the cloud services used,
-                            data pipelines, and architecture implemented.
+                            Project description goes here. Describe what the project does, the cloud services used,
+                            and the architecture implemented.
                         </p>
                         <div class="tech-stack">
                             <span class="tech-badge">Azure</span>
@@ -1448,45 +1273,72 @@
             </div>
 
             <!-- ============================================
-                 DATA SCIENCE & ANALYTICS PROJECTS
+                 AI PROJECTS
                  ============================================ -->
-            <h3 style="color: var(--primary-color); font-size: 1.8rem; margin: 3rem 0 1.5rem 0; text-align: center;">Data Science & Analytics Projects</h3>
+            <h3 style="color: var(--primary-color); font-size: 1.8rem; margin: 3rem 0 1.5rem 0; text-align: center;">AI Projects</h3>
             <div class="projects-grid">
-                <!-- Data Science Project 1 -->
+                <!-- AI Project 1 -->
                 <div class="project-card">
-                    <img src="ds-project1.png" alt="Campus Operations Analytics Screenshot">
+                    <img src="ai-project1.jpg" alt="AI Project 1 Screenshot">
                     <div class="project-content">
-                        <h3>Campus Operations Analytics & Behavioral Segmentation</h3>
-                        <p class="project-date">September 2025</p>
+                        <h3>Project Title 1</h3>
+                        <p class="project-date">Month Year</p>
                         <p>
-                            Applied unsupervised learning algorithms to segment 5 distinct departmental behavior patterns across campus
-                            operations; insights enabled targeted communication strategies and process improvements that reduced
-                            unnecessary support tickets by 25%.
+                            Project description goes here. Describe what the AI model does, the techniques used,
+                            and the problem it solves.
                         </p>
                         <div class="tech-stack">
-                            <span class="tech-badge">Python</span>
-                            <span class="tech-badge">K-Means Clustering</span>
-                            <span class="tech-badge">Gaussian Mixture Model</span>
-                            <span class="tech-badge">Scikit-learn</span>
-                            <span class="tech-badge">Data Analytics</span>
+                            <span class="tech-badge">TensorFlow</span>
+                            <span class="tech-badge">NLP</span>
+                            <span class="tech-badge">Deep Learning</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/4uatul/project-name" class="project-link" target="_blank">View on GitHub →</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Data Science Project 2 -->
+                <!-- AI Project 2 -->
                 <div class="project-card">
-                    <img src="ds-project2.jpg" alt="Data Science Project 2 Screenshot">
+                    <img src="ai-project2.jpg" alt="AI Project 2 Screenshot">
                     <div class="project-content">
                         <h3>Project Title 2</h3>
                         <p class="project-date">Month Year</p>
                         <p>
-                            Project description goes here. Describe statistical modeling, visualization,
-                            and actionable insights derived from the data.
+                            Project description goes here. Describe what the AI model does, the techniques used,
+                            and the problem it solves.
                         </p>
                         <div class="tech-stack">
-                            <span class="tech-badge">R</span>
-                            <span class="tech-badge">Tableau</span>
-                            <span class="tech-badge">Statistical Analysis</span>
+                            <span class="tech-badge">PyTorch</span>
+                            <span class="tech-badge">Computer Vision</span>
+                            <span class="tech-badge">CNN</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/4uatul/project-name" class="project-link" target="_blank">View on GitHub →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================
+                 DATA ENGINEERING PROJECTS
+                 ============================================ -->
+            <h3 style="color: var(--primary-color); font-size: 1.8rem; margin: 3rem 0 1.5rem 0; text-align: center;">Data Engineering Projects</h3>
+            <div class="projects-grid">
+                <!-- Data Engineering Project 1 -->
+                <div class="project-card">
+                    <img src="de-project1.jpg" alt="Data Engineering Project 1 Screenshot">
+                    <div class="project-content">
+                        <h3>Project Title 1</h3>
+                        <p class="project-date">Month Year</p>
+                        <p>
+                            Project description goes here. Describe the data pipeline, ETL processes,
+                            and infrastructure used.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-badge">Apache Spark</span>
+                            <span class="tech-badge">Hadoop</span>
+                            <span class="tech-badge">ETL</span>
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/4uatul/project-name" class="project-link" target="_blank">View on GitHub →</a>
@@ -1494,24 +1346,130 @@
                     </div>
                 </div>
 
-                <!-- Data Science Project 3 -->
+                <!-- Data Engineering Project 2 -->
                 <div class="project-card">
-                    <img src="ds-project3.jpg" alt="Data Science Project 3 Screenshot">
+                    <img src="de-project2.jpg" alt="Data Engineering Project 2 Screenshot">
                     <div class="project-content">
-                        <h3>Project Title 3</h3>
+                        <h3>Project Title 2</h3>
                         <p class="project-date">Month Year</p>
                         <p>
-                            Project description goes here. Describe the data exploration, predictive modeling,
-                            and how insights drove business decisions.
+                            Project description goes here. Describe the data pipeline, ETL processes,
+                            and infrastructure used.
                         </p>
                         <div class="tech-stack">
+                            <span class="tech-badge">Airflow</span>
+                            <span class="tech-badge">PostgreSQL</span>
                             <span class="tech-badge">Python</span>
-                            <span class="tech-badge">Power BI</span>
-                            <span class="tech-badge">Predictive Modeling</span>
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/4uatul/project-name" class="project-link" target="_blank">View on GitHub →</a>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SKILLS SECTION - Two Column Layout
+         ============================================ -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2>Technical Skills</h2>
+            <p class="section-subtitle">Tools and technologies I work with</p>
+
+            <div class="skills-list">
+                <!-- Programming Languages -->
+                <div class="skill-row">
+                    <div class="skill-category-name">
+                        <h3>Programming Languages</h3>
+                    </div>
+                    <div class="skill-items">
+                        <span class="skill-item">Python</span>
+                        <span class="skill-item">SQL</span>
+                        <span class="skill-item">R</span>
+                        <span class="skill-item">C++</span>
+                        <span class="skill-item">Java</span>
+                        <span class="skill-item">JavaScript</span>
+                        <span class="skill-item">Node.js</span>
+                    </div>
+                </div>
+
+                <!-- Machine Learning -->
+                <div class="skill-row">
+                    <div class="skill-category-name">
+                        <h3>Machine Learning</h3>
+                    </div>
+                    <div class="skill-items">
+                        <span class="skill-item">Scikit-learn</span>
+                        <span class="skill-item">TensorFlow</span>
+                        <span class="skill-item">PyTorch</span>
+                        <span class="skill-item">Time-Series Forecasting</span>
+                        <span class="skill-item">K-Means Clustering</span>
+                        <span class="skill-item">GMM</span>
+                        <span class="skill-item">Statistical Modeling</span>
+                    </div>
+                </div>
+
+                <!-- Data Analytics & Visualization -->
+                <div class="skill-row">
+                    <div class="skill-category-name">
+                        <h3>Data Analytics & Visualization</h3>
+                    </div>
+                    <div class="skill-items">
+                        <span class="skill-item">Tableau</span>
+                        <span class="skill-item">Power BI</span>
+                        <span class="skill-item">D3.js</span>
+                        <span class="skill-item">Matplotlib</span>
+                        <span class="skill-item">Seaborn</span>
+                        <span class="skill-item">Plotly</span>
+                    </div>
+                </div>
+
+                <!-- Databases -->
+                <div class="skill-row">
+                    <div class="skill-category-name">
+                        <h3>Databases</h3>
+                    </div>
+                    <div class="skill-items">
+                        <span class="skill-item">PostgreSQL</span>
+                        <span class="skill-item">MySQL</span>
+                        <span class="skill-item">DynamoDB</span>
+                        <span class="skill-item">CosmosDB</span>
+                        <span class="skill-item">Hive (HQL)</span>
+                        <span class="skill-item">Microsoft Access</span>
+                    </div>
+                </div>
+
+                <!-- Cloud & Big Data -->
+                <div class="skill-row">
+                    <div class="skill-category-name">
+                        <h3>Cloud & Big Data</h3>
+                    </div>
+                    <div class="skill-items">
+                        <span class="skill-item">AWS EC2</span>
+                        <span class="skill-item">AWS EMR</span>
+                        <span class="skill-item">AWS Lambda</span>
+                        <span class="skill-item">AWS S3</span>
+                        <span class="skill-item">Azure Functions</span>
+                        <span class="skill-item">Azure App Service</span>
+                        <span class="skill-item">Apache Spark</span>
+                        <span class="skill-item">Hadoop</span>
+                        <span class="skill-item">Distributed Systems</span>
+                    </div>
+                </div>
+
+                <!-- Professional Skills -->
+                <div class="skill-row">
+                    <div class="skill-category-name">
+                        <h3>Professional Skills</h3>
+                    </div>
+                    <div class="skill-items">
+                        <span class="skill-item">Statistical Analysis</span>
+                        <span class="skill-item">Data Storytelling</span>
+                        <span class="skill-item">Cross-functional Collaboration</span>
+                        <span class="skill-item">Leadership & Mentoring</span>
+                        <span class="skill-item">Problem Solving</span>
                     </div>
                 </div>
             </div>
@@ -1574,7 +1532,7 @@
                         <h3>Becoming Cloud Practitioner</h3>
                         <span class="cert-issuer">Amazon Skill Center</span>
                         <div class="cert-meta">
-                            <span class="cert-date">2025</span>
+                            <span class="cert-date">Courses 1-4</span>
                         </div>
                     </div>
                 </div>
@@ -1586,29 +1544,29 @@
                         <h3>Becoming AI Practitioner</h3>
                         <span class="cert-issuer">Amazon Skill Center</span>
                         <div class="cert-meta">
-                            <span class="cert-date">2025</span>
+                            <span class="cert-date">Courses 1-5</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Certification 3 -->
                 <div class="cert-card">
-                    <div class="cert-icon-box">AWS</div>
-                    <div class="cert-content">
-                        <h3>Introduction to Machine Learning</h3>
-                        <span class="cert-issuer">AWS Skill Builder</span>
-                        <div class="cert-meta">
-                            <span class="cert-date">2025</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Certification 4 -->
-                 <div class="cert-card">
-                    <div class="cert-icon-box">IBM</div>
+                    <div class="cert-icon-box">DS</div>
                     <div class="cert-content">
                         <h3>Data Science Methodology</h3>
                         <span class="cert-issuer">IBM / Coursera</span>
+                        <div class="cert-meta">
+                            <span class="cert-date">2024</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certification 4 -->
+                <div class="cert-card">
+                    <div class="cert-icon-box">ML</div>
+                    <div class="cert-content">
+                        <h3>Introduction to Machine Learning</h3>
+                        <span class="cert-issuer">Microsoft / LinkedIn Learning</span>
                         <div class="cert-meta">
                             <span class="cert-date">2024</span>
                         </div>
