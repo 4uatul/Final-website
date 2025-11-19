@@ -1161,6 +1161,27 @@
                     </div>
                 </div>
 
+                <!-- Data Engineering -->
+                <div class="skill-row">
+                    <div class="skill-category-name">
+                        <h3>AWS Data Engineering</h3>
+                        <p>Building and optimizing data pipelines</p>
+                    </div>
+                    <div class="skill-items">
+                        <span class="skill-item">S3</span>
+                        <span class="skill-item">Lambda</span>
+                        <span class="skill-item">Glue</span>
+                        <span class="skill-item">Athena</span>
+                        <span class="skill-item">EMR</span>
+                        <span class="skill-item">Redshift</span>
+                        <span class="skill-item">IAM</span>
+                        <span class="skill-item">CloudWatch</span>
+                        <span class="skill-item">QuickSight</span>
+                        <span class="skill-item">CloudFormation</span>
+                        <span class="skill-item">Kafka</span>
+                    </div>
+                </div>
+
                 <!-- Data Analytics & Visualization -->
                 <div class="skill-row">
                     <div class="skill-category-name">
@@ -1319,8 +1340,14 @@
                         <h3>Amazon Lex Banking Chatbot Development</h3>
                         <p class="project-date">November 2025</p>
                         <p>
-                            Built a conversational AI chatbot using Amazon Lex with custom intents and NLU capabilities for banking transactions. Integrated AWS Lambda functions for dynamic responses and implemented context tags for multi-turn conversations. Deployed infrastructure as code using AWS CloudFormation with automated IAM configuration.
+                            Conversational AI chatbot for banking transactions with NLU capabilities.
                         </p>
+                        <ul style="color: var(--text-light); margin-bottom: 1rem; padding-left: 1.5rem;">
+                            <li>Custom intents and slot types for banking operations</li>
+                            <li>AWS Lambda integration for dynamic responses</li>
+                            <li>Context tags for multi-turn conversations</li>
+                            <li>Infrastructure as code via CloudFormation</li>
+                        </ul>
                         <div class="tech-stack">
                             <span class="tech-badge">Amazon Lex</span>
                             <span class="tech-badge">NLU</span>
@@ -1338,8 +1365,14 @@
                         <h3>NeatCode - AI-Powered Code Refactoring Tool</h3>
                         <p class="project-date">In Progress</p>
                         <p>
-                            Developing a full-stack application using Python Flask and Google Gemini AI API to provide intelligent code refactoring suggestions. Built with RESTful architecture, file upload functionality, and a responsive dark-themed UI. Collaborating in a team of 3 using Agile methodology across 4 sprints.
+                            Full-stack application providing intelligent code refactoring suggestions.
                         </p>
+                        <ul style="color: var(--text-light); margin-bottom: 1rem; padding-left: 1.5rem;">
+                            <li>Python Flask backend with Google Gemini AI API</li>
+                            <li>RESTful architecture with file upload functionality</li>
+                            <li>Responsive dark-themed UI</li>
+                            <li>Team of 3 using Agile methodology (4 sprints)</li>
+                        </ul>
                         <div class="tech-stack">
                             <span class="tech-badge">Python Flask</span>
                             <span class="tech-badge">Google Gemini AI</span>
@@ -1381,18 +1414,51 @@
                  ============================================ -->
             <h3 style="color: var(--primary-color); font-size: 1.8rem; margin: 3rem 0 1.5rem 0; text-align: center;">Data Engineering & Cloud Projects</h3>
             <div class="projects-grid">
-                <!-- Data Engineering/Cloud Project 1 -->
+
+
+                 <!-- Data Engineering/Cloud Project 1 -->
                 <div class="project-card">
-                    <img src="de-project1.jpg" alt="Real-Time TF-IDF Search Engine Screenshot">
+                    <img src="de-project1.jpg" alt="Data Engineering Project 1 Screenshot">
+                    <div class="project-content">
+                        <h3>YouTube Trending Analytics - AWS Data Lake</h3>
+                        <p class="project-date">Nov 2025</p>
+                        <p>
+                            Serverless data engineering pipeline analyzing 1,000+ trending videos across 5 regions with automated ETL workflows.
+                        </p>
+                        <ul style="color: var(--text-light); margin-bottom: 1rem; padding-left: 1.5rem;">
+                            <li>Three-tier S3 data lake (Raw → Cleansed → Analytics)</li>
+                            <li>Event-driven Lambda + PySpark Glue transformations</li>
+                            <li>75% storage reduction | 80% query cost savings</li>
+                            <li>Athena SQL analytics + QuickSight dashboards</li>
+                        </ul>
+                        <div class="tech-stack">
+                            <span class="tech-badge">AWS</span>
+                            <span class="tech-badge">PySpark</span>
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">SQL</span>
+                            <span class="tech-badge">Parquet</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/4uatul/project-name" class="project-link" target="_blank">View on GitHub →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Engineering/Cloud Project 2 -->
+                <div class="project-card">
+                    <img src="de-project2.jpg" alt="Real-Time TF-IDF Search Engine Screenshot">
                     <div class="project-content">
                         <h3>Real-Time TF-IDF Search Engine</h3>
                         <p class="project-date">March 2025</p>
                         <p>
-                            Deployed a scalable distributed search engine on AWS infrastructure (EMR, EC2, S3, DynamoDB, Lambda)
-                            using Apache Spark for parallel processing, demonstrating production-level cloud architecture and big data
-                            processing capabilities. Implemented TF-IDF-based document ranking algorithm in Python, processing large-scale
-                            text datasets to deliver fast, relevant search results in real-time.
+                            Scalable distributed search engine on AWS infrastructure.
                         </p>
+                        <ul style="color: var(--text-light); margin-bottom: 1rem; padding-left: 1.5rem;">
+                            <li>Apache Spark for parallel processing on EMR</li>
+                            <li>AWS infrastructure (EC2, S3, DynamoDB, Lambda)</li>
+                            <li>TF-IDF document ranking algorithm in Python</li>
+                            <li>Real-time search across large-scale text datasets</li>
+                        </ul>
                         <div class="tech-stack">
                             <span class="tech-badge">Apache Spark</span>
                             <span class="tech-badge">AWS EMR</span>
@@ -1404,26 +1470,7 @@
                     </div>
                 </div>
 
-                <!-- Data Engineering/Cloud Project 2 -->
-                <div class="project-card">
-                    <img src="de-project2.jpg" alt="Data Engineering Project 2 Screenshot">
-                    <div class="project-content">
-                        <h3>Project Title 2</h3>
-                        <p class="project-date">Month Year</p>
-                        <p>
-                            Project description goes here. Describe the data pipeline, ETL processes,
-                            cloud infrastructure, and scalability implemented.
-                        </p>
-                        <div class="tech-stack">
-                            <span class="tech-badge">Airflow</span>
-                            <span class="tech-badge">AWS S3</span>
-                            <span class="tech-badge">Python</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/4uatul/project-name" class="project-link" target="_blank">View on GitHub →</a>
-                        </div>
-                    </div>
-                </div>
+               
 
                 <!-- Data Engineering/Cloud Project 3 -->
                 <div class="project-card">
@@ -1459,10 +1506,14 @@
                         <h3>Campus Operations Analytics & Behavioral Segmentation</h3>
                         <p class="project-date">September 2025</p>
                         <p>
-                            Applied unsupervised learning algorithms to segment 5 distinct departmental behavior patterns across campus
-                            operations; insights enabled targeted communication strategies and process improvements that reduced
-                            unnecessary support tickets by 25%.
+                            Unsupervised learning for campus operations optimization.
                         </p>
+                        <ul style="color: var(--text-light); margin-bottom: 1rem; padding-left: 1.5rem;">
+                            <li>Segmented 5 distinct departmental behavior patterns</li>
+                            <li>Used unsupervised clustering algorithms</li>
+                            <li>Enabled targeted communication strategies</li>
+                            <li>25% reduction in unnecessary support tickets</li>
+                        </ul>
                         <div class="tech-stack">
                             <span class="tech-badge">Python</span>
                             <span class="tech-badge">K-Means Clustering</span>
