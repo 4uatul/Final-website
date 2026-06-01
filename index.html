@@ -773,22 +773,22 @@
             position: absolute;
             top: 0;
             right: -8px;
-            width: 22px;
-            height: 22px;
-            background: var(--blue-light);
+            width: 24px;
+            height: 24px;
+            background: rgba(37,99,235,0.7);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             text-decoration: none;
             font-size: 0.7rem;
-            color: var(--blue);
-            transition: all 0.2s;
+            color: #fff;
+            transition: background 0.2s;
+            z-index: 2;
         }
 
         .cert-link-icon:hover {
             background: var(--blue);
-            color: #fff;
         }
 
         /* ============================================
@@ -1292,7 +1292,6 @@
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/4uatul/NeatCode" class="project-link" target="_blank">GitHub →</a>
-                            <a href="http://neatcode-app-frontend.s3-website-us-west-1.amazonaws.com" class="project-link" target="_blank">Live Demo →</a>
                         </div>
                     </div>
                 </div>
@@ -1539,7 +1538,9 @@
             <div class="certs-grid">
                 <div class="cert-card">
                     <a href="https://www.credly.com/badges/da566c70-a6e6-4843-a0bb-b25d89c13474/public_url" target="_blank" class="cert-link-icon" title="View on Credly">↗</a>
-                    <img src="saa.png" alt="AWS Solutions Architect Associate" class="cert-badge-img">
+                    <a href="https://www.credly.com/badges/da566c70-a6e6-4843-a0bb-b25d89c13474/public_url" target="_blank">
+                        <img src="saa.png" alt="AWS Solutions Architect Associate" class="cert-badge-img">
+                    </a>
                     <div class="cert-info">
                         <h3>Solutions Architect – Associate</h3>
                         <span class="issuer">Amazon Web Services</span>
@@ -1549,7 +1550,9 @@
 
                 <div class="cert-card">
                     <a href="https://www.credly.com/badges/0b1933e0-8858-4f45-9eef-3116bca7cd09/public_url" target="_blank" class="cert-link-icon" title="View on Credly">↗</a>
-                    <img src="ccp.png" alt="AWS Cloud Practitioner" class="cert-badge-img">
+                    <a href="https://www.credly.com/badges/0b1933e0-8858-4f45-9eef-3116bca7cd09/public_url" target="_blank">
+                        <img src="ccp.png" alt="AWS Cloud Practitioner" class="cert-badge-img">
+                    </a>
                     <div class="cert-info">
                         <h3>Certified Cloud Practitioner</h3>
                         <span class="issuer">Amazon Web Services</span>
@@ -1559,7 +1562,9 @@
 
                 <div class="cert-card">
                     <a href="https://www.credly.com/badges/714cc18b-8f49-4b77-8488-6942304041fb/public_url" target="_blank" class="cert-link-icon" title="View on Credly">↗</a>
-                    <img src="aip.png" alt="AWS AI Practitioner" class="cert-badge-img">
+                    <a href="https://www.credly.com/badges/714cc18b-8f49-4b77-8488-6942304041fb/public_url" target="_blank">
+                        <img src="aip.png" alt="AWS AI Practitioner" class="cert-badge-img">
+                    </a>
                     <div class="cert-info">
                         <h3>AI Practitioner</h3>
                         <span class="issuer">Amazon Web Services</span>
@@ -1580,11 +1585,57 @@
             <div class="cert-group-label">Agentic AI</div>
             <div class="certs-grid">
                 <div class="cert-card">
-                    <img src="besa.png" alt="BeSA Agentic AI Graduate" class="cert-badge-img">
+                    <a href="https://besa.techexpert.io/badge/atul/665" target="_blank" class="cert-link-icon" title="View Badge">↗</a>
+                    <a href="https://besa.techexpert.io/badge/atul/665" target="_blank">
+                        <img src="besa1.png" alt="Foundations of AI Agents" class="cert-badge-img">
+                    </a>
                     <div class="cert-info">
-                        <h3>BeSA Agentic AI Graduate</h3>
-                        <span class="issuer">BeSA</span>
-                        <span class="year">Strands Agents SDK · Bedrock AgentCore · MCP</span>
+                        <h3>Foundations of AI Agents</h3>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <a href="https://besa.techexpert.io/badge/atul/670" target="_blank" class="cert-link-icon" title="View Badge">↗</a>
+                    <a href="https://besa.techexpert.io/badge/atul/670" target="_blank">
+                        <img src="besa2.png" alt="Building with Agentic AI" class="cert-badge-img">
+                    </a>
+                    <div class="cert-info">
+                        <h3>Building with Agentic AI</h3>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <a href="https://besa.techexpert.io/badge/atul/675" target="_blank" class="cert-link-icon" title="View Badge">↗</a>
+                    <a href="https://besa.techexpert.io/badge/atul/675" target="_blank">
+                        <img src="besa3.png" alt="Designing with Strands Agents" class="cert-badge-img">
+                    </a>
+                    <div class="cert-info">
+                        <h3>Designing with Strands Agents</h3>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <a href="https://besa.techexpert.io/badge/atul/676" target="_blank" class="cert-link-icon" title="View Badge">↗</a>
+                    <a href="https://besa.techexpert.io/badge/atul/676" target="_blank">
+                        <img src="besa4.png" alt="Building at Scale with Bedrock AgentCore" class="cert-badge-img">
+                    </a>
+                    <div class="cert-info">
+                        <h3>Building at Scale with Bedrock AgentCore</h3>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <a href="https://besa.techexpert.io/badge/atul/677" target="_blank" class="cert-link-icon" title="View Badge">↗</a>
+                    <a href="https://besa.techexpert.io/badge/atul/677" target="_blank">
+                        <img src="besa5.png" alt="Model Context Protocol in Practice" class="cert-badge-img">
+                    </a>
+                    <div class="cert-info">
+                        <h3>Model Context Protocol in Practice</h3>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <a href="https://besa.techexpert.io/badge/atul/710" target="_blank" class="cert-link-icon" title="View Badge">↗</a>
+                    <a href="https://besa.techexpert.io/badge/atul/710" target="_blank">
+                        <img src="besa6.png" alt="Supercharging Development with Kiro" class="cert-badge-img">
+                    </a>
+                    <div class="cert-info">
+                        <h3>Supercharging Development with Kiro</h3>
                     </div>
                 </div>
             </div>
