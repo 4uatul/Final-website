@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atul Bhardwaj | Data Science & Cloud Portfolio</title>
+    <title>Atul Bhardwaj | AWS Solutions Architect</title>
     <style>
         /* ============================================
            DESIGN TOKENS
@@ -484,7 +484,8 @@
             box-shadow: var(--shadow-sm);
             transition: all 0.25s ease;
             display: grid;
-            grid-template-columns: 400px 1fr;
+            grid-template-columns: 380px 1fr;
+            align-items: stretch;
         }
 
         .project-card:hover {
@@ -494,13 +495,15 @@
 
         .project-img-wrap {
             overflow: hidden;
-            min-height: 260px;
+            height: 100%;
+            min-height: 280px;
         }
 
         .project-img-wrap img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: center top;
             display: block;
             border-right: 1px solid var(--border);
         }
@@ -1064,7 +1067,13 @@
         <div class="container">
             <img src="profile.jpg" alt="Atul Bhardwaj" class="profile-img">
             <h1>Atul Bhardwaj</h1>
-            <p class="tagline">Data Science Graduate · ML & Cloud Engineer · Solutions Architect · Building Scalable AI Solutions</p>
+            <p class="tagline">Cloud architect at heart. I build on AWS, share the journey, and solve problems for real people.</p>
+            <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; margin-bottom:2rem;">
+                <span style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); padding:0.45rem 1.1rem; border-radius:30px; font-size:0.92rem; color:#fff;">MS CS · Seattle University</span>
+                <span style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); padding:0.45rem 1.1rem; border-radius:30px; font-size:0.92rem; color:#fff;">3x AWS Certified</span>
+                <span style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); padding:0.45rem 1.1rem; border-radius:30px; font-size:0.92rem; color:#fff;">2 Apps in Production</span>
+                <span style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); padding:0.45rem 1.1rem; border-radius:30px; font-size:0.92rem; color:#fff;">No Immediate Sponsorship · STEM OPT till 2029</span>
+            </div>
             <div class="cta-buttons">
                 <a href="#contact" class="btn btn-primary">Get In Touch</a>
                 <a href="Atul_Bhardwaj_Resume.pdf" class="btn btn-secondary" download>Download Resume</a>
@@ -1078,19 +1087,19 @@
             <div class="section-header">
                 <h2>About <span>Me</span></h2>
                 <div class="section-divider"></div>
-                <p>Driven by data. Focused on impact.</p>
+                <p>CS grad, cloud builder, two apps live in production.</p>
             </div>
 
             <div class="about-grid">
                 <div class="about-text">
                     <p>
-                        I'm a Computer Science grad student at Seattle University, specializing in Data Science. I'm 3x AWS certified, including Solutions Architect Associate, and serve as Cloud Solutions Lead for Seattle University's AWS Cloud Club.
+                        I'm finishing my CS master's at Seattle University and spending most of my time building on AWS. I have <strong>two apps running in production right now</strong> — a serverless RAG chatbot and a three-tier platform — both built to solve real problems for real users on campus.
                     </p>
                     <p>
-                        I work as an Operations Technician &amp; Customer Service Specialist at Seattle University's Campus Services and consult at Statistics Without Borders, guiding teams on data workflows and technical strategy. I design and build cloud-native solutions, from serverless data pipelines to RAG-powered chatbots on AWS.
+                        I lead the AWS Cloud Club at SU, where I grew the community from <strong>13 to 90+ members</strong>, secured <strong>$10K in AWS credits</strong>, and co-hosted a 24-hour hackathon with UW after cold-emailing Jeff Barr. I like figuring out the right architecture for a problem — not just the most popular one.
                     </p>
                     <p>
-                        I thrive at the intersection of cloud architecture, data engineering, and applied ML. I've published IEEE research on deep learning and I'm driven by designing systems that are reliable, scalable, and solve real problems.
+                        I'm <strong>3x AWS certified</strong> and a BeSA Agentic AI graduate (Strands Agents SDK, Bedrock AgentCore, MCP). I'm on STEM OPT through mid-2029.
                     </p>
                 </div>
                 <div class="about-stats">
@@ -1103,12 +1112,12 @@
                         <div class="label">GPA</div>
                     </div>
                     <div class="stat-card">
-                        <div class="num">6+</div>
-                        <div class="label">Projects Shipped</div>
+                        <div class="num">2</div>
+                        <div class="label">Live AWS Apps</div>
                     </div>
                     <div class="stat-card">
-                        <div class="num">2</div>
-                        <div class="label">Publications</div>
+                        <div class="num">90+</div>
+                        <div class="label">Cloud Club Members</div>
                     </div>
                 </div>
             </div>
@@ -1157,40 +1166,38 @@
             <div class="section-header">
                 <h2>Professional <span>Experience</span></h2>
                 <div class="section-divider"></div>
-                <p>Building impact through data-driven solutions</p>
+                <p>Shipping production AWS applications and leading teams</p>
             </div>
 
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="role">Cloud Solutions Lead</div>
-                    <div class="org">Seattle University AWS Cloud Club</div>
-                    <div class="date">Mar 2026 – Present · Seattle, WA</div>
+                    <div class="org">AWS Cloud Club, Seattle University</div>
+                    <div class="date">Jan 2026 – Present · Seattle, WA</div>
                     <ul>
-                        <li>Leading cloud architecture discussions and hands-on sessions for club members on AWS services and best practices.</li>
-                        <li>Organizing workshops and study groups to help students prepare for AWS certifications.</li>
-                        <li>Collaborating with peers on cloud-based projects and connecting members with industry resources.</li>
+                        <li>Scaled the club from 13 to 90+ members in two quarters by building partnerships with AWS Solutions Architects, Developer Advocates, and the AWS Skills Center, turning cold outreach into recurring collaboration.</li>
+                        <li>Built a direct relationship with AWS VP Jeff Barr through cold outreach, securing $10K in AWS credits and a co-hosting partnership with UW for a 24-hour, three-track hackathon (Build with Bedrock, Serverless Solutions, Cloud for Good).</li>
+                        <li>Evangelized AWS services (Bedrock Knowledge Bases, Lambda, API Gateway) through cloud architecture workshops for 20+ builders per session, helping participants select scalable, cost-effective solutions for their own workloads.</li>
                     </ul>
                 </div>
 
                 <div class="timeline-item">
                     <div class="role">Data Science Consultant</div>
                     <div class="org">Statistics Without Borders</div>
-                    <div class="date">Sep 2025 – Present · Seattle, WA</div>
+                    <div class="date">Sep 2025 – Apr 2026</div>
                     <ul>
-                        <li>Advised on data strategy for Women in Sport initiative (14+ datasets, n > 2,200) — technical guidance, QA, and management recommendations.</li>
-                        <li>Turned complex statistical results into executive-ready visuals for non-technical stakeholders.</li>
-                        <li>Mentored 7 project teams on reproducible workflows and data storytelling.</li>
+                        <li>Served as technical point of contact across 7 teams (14 contributors, 14+ datasets), distilled data quality issues into clear technical requirements, and presented standards to non-technical leadership that the organization adopted.</li>
+                        <li>Migrated 14 contributors from unversioned email workflows to GitHub, accelerating adoption by authoring onboarding docs that got non-technical members committing in under a week.</li>
                     </ul>
                 </div>
 
                 <div class="timeline-item">
-                    <div class="role">Operations Technician &amp; Customer Service Specialist</div>
+                    <div class="role">Operations Technician</div>
                     <div class="org">Seattle University</div>
-                    <div class="date">Jun 2025 – Present · Seattle, WA</div>
+                    <div class="date">Oct 2024 – Present · Seattle, WA</div>
                     <ul>
-                        <li>Building an AWS RAG chatbot (Bedrock, Lambda, S3) for campus services — expected to cut response time from hours to seconds.</li>
-                        <li>Analyzed parking demand with Python and clustering; built Power BI dashboards presented to Director for operational improvements.</li>
-                        <li>Serve customers, train front desk staff, and collaborate with IT on networking issues.</li>
+                        <li>Gathered stakeholder feedback and cross-referenced it against parking and transit utilization data, identified 7 plans adding cost without serving demand, and translated findings into a consolidation recommendation leadership approved.</li>
+                        <li>Found a manual bottleneck in ID card fulfillment (staff hand-sorting 200+ cards per batch), rewrote the Entrust batch SQL to auto-sort at query time, eliminating the manual step entirely.</li>
                     </ul>
                 </div>
             </div>
@@ -1206,29 +1213,82 @@
                 <p>Solving real-world problems with data and code</p>
             </div>
 
+            <!-- AWS Cloud — Live Production Applications -->
+            <div class="project-category-label">AWS Cloud — Live Production</div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-img-wrap"><img src="suchatbot.png" alt="SUChatBot - Campus Services RAG Chatbot"></div>
+                    <div class="project-content">
+                        <h3>SUChatBot — Campus RAG Chatbot</h3>
+                        <p class="project-date">2025 · Live</p>
+                        <p>Replaced 53 static SharePoint pages with a serverless chatbot that answers questions for 5 campus departments instantly — no staff needed.</p>
+                        <ul class="project-bullets">
+                            <li>S3 Vectors over OpenSearch — ~$350/month saved, sub-3s responses</li>
+                            <li>Fully serverless: Lambda + API Gateway + CloudFront</li>
+                            <li>Claude Haiku 4.5 for inference; Titan Embeddings V2 for vectors</li>
+                        </ul>
+                        <div class="tech-stack">
+                            <span class="tech-badge">Bedrock</span>
+                            <span class="tech-badge">Lambda</span>
+                            <span class="tech-badge">S3 Vectors</span>
+                            <span class="tech-badge">API Gateway</span>
+                            <span class="tech-badge">CloudFront</span>
+                            <span class="tech-badge">RAG</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://SUChatBot.atulbhardwaj.com" class="project-link" target="_blank">Live App →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-img-wrap"><img src="lostandfound.png" alt="Lost and Found Platform"></div>
+                    <div class="project-content">
+                        <h3>Lost &amp; Found Platform</h3>
+                        <p class="project-date">2025 · Live · $0.90/day</p>
+                        <p>Three-tier AWS app connecting 4 campus offices under one lost-and-found system. Chose EC2/RDS over serverless to keep it always-on and snappy.</p>
+                        <ul class="project-bullets">
+                            <li>Custom VPC with public/private subnets across two AZs</li>
+                            <li>Cognito auth locked to @seattleu.edu; IAM least-privilege throughout</li>
+                            <li>CI/CD via GitHub Actions; nginx + Flask + React + PostgreSQL</li>
+                        </ul>
+                        <div class="tech-stack">
+                            <span class="tech-badge">EC2</span>
+                            <span class="tech-badge">RDS</span>
+                            <span class="tech-badge">VPC</span>
+                            <span class="tech-badge">Cognito</span>
+                            <span class="tech-badge">CloudFront</span>
+                            <span class="tech-badge">IAM</span>
+                            <span class="tech-badge">GitHub Actions</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://LostAndFound.atulbhardwaj.com" class="project-link" target="_blank">Live App →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- AI / ML -->
             <div class="project-category-label">AI / ML</div>
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-img-wrap"><img src="ai-project2.jpg" alt="NeatCode - AI Code Refactoring"></div>
                     <div class="project-content">
-                        <h3>NeatCode — AI-Powered Code Refactoring</h3>
+                        <h3>NeatCode — AI Code Refactoring</h3>
                         <p class="project-date">March 2026</p>
-                        <p>Full-stack app deployed to AWS — paste messy code, get it refactored by Google Gemini AI with <strong>explanations for every change</strong> so you're learning, not just copying.</p>
+                        <p>Paste messy code, get it cleaned up by Gemini AI with an explanation for every change — so you actually understand what changed.</p>
                         <ul class="project-bullets">
-                            <li><strong>Flask backend</strong> on Elastic Beanstalk (Dockerized) for managed deployments and health checks</li>
-                            <li><strong>React frontend</strong> hosted on S3 with CloudFront CDN for edge caching</li>
-                            <li><strong>Input guard rails</strong> — rejects non-code input and prompts the user to try again</li>
-                            <li>Started as an academic project (team of 3, Agile/4 sprints), extended and deployed solo</li>
+                            <li>Dockerized Flask on Elastic Beanstalk; React on S3 + CloudFront</li>
+                            <li>Input guard rails reject non-code submissions</li>
+                            <li>Built with a team of 3 (Agile), then extended and deployed solo</li>
                         </ul>
                         <div class="tech-stack">
-                            <span class="tech-badge">Python Flask</span>
+                            <span class="tech-badge">Flask</span>
                             <span class="tech-badge">React</span>
                             <span class="tech-badge">Gemini AI</span>
-                            <span class="tech-badge">AWS Elastic Beanstalk</span>
-                            <span class="tech-badge">S3</span>
-                            <span class="tech-badge">CloudFront</span>
+                            <span class="tech-badge">Elastic Beanstalk</span>
                             <span class="tech-badge">Docker</span>
+                            <span class="tech-badge">CloudFront</span>
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/4uatul/NeatCode" class="project-link" target="_blank">GitHub →</a>
@@ -1242,16 +1302,15 @@
                     <div class="project-content">
                         <h3>Amazon Lex Banking Chatbot</h3>
                         <p class="project-date">November 2025</p>
-                        <p>Conversational AI chatbot for banking transactions with custom intents, slot types, and multi-turn context management.</p>
+                        <p>Conversational chatbot for banking transactions — custom intents, slot types, and multi-turn dialogue, all wired to Lambda for live responses.</p>
                         <ul class="project-bullets">
-                            <li>AWS Lambda integration for dynamic responses</li>
-                            <li>Infrastructure as code via CloudFormation</li>
+                            <li>Lambda integration for dynamic, context-aware responses</li>
+                            <li>Deployed via CloudFormation (infrastructure as code)</li>
                         </ul>
                         <div class="tech-stack">
                             <span class="tech-badge">Amazon Lex</span>
-                            <span class="tech-badge">AWS Lambda</span>
+                            <span class="tech-badge">Lambda</span>
                             <span class="tech-badge">CloudFormation</span>
-                            <span class="tech-badge">NLU</span>
                         </div>
                     </div>
                 </div>
@@ -1263,19 +1322,19 @@
                 <div class="project-card">
                     <div class="project-img-wrap"><img src="de-project1.jpg" alt="YouTube Trending Analytics AWS Data Lake"></div>
                     <div class="project-content">
-                        <h3>YouTube Trending Analytics — AWS Data Lake</h3>
+                        <h3>YouTube Trending Analytics — Data Lake</h3>
                         <p class="project-date">November 2025</p>
-                        <p>Serverless pipeline analyzing 1,000+ trending videos across 5 regions with automated ETL workflows.</p>
+                        <p>Serverless ETL pipeline that ingests 1,000+ trending videos across 5 regions and makes them queryable in seconds.</p>
                         <ul class="project-bullets">
                             <li>Three-tier S3 lake: Raw → Cleansed → Analytics</li>
-                            <li>75% storage reduction · 80% query cost savings</li>
+                            <li>75% storage reduction · 80% query cost savings via Parquet</li>
                             <li>Athena SQL + QuickSight dashboards</li>
                         </ul>
                         <div class="tech-stack">
-                            <span class="tech-badge">AWS</span>
-                            <span class="tech-badge">PySpark</span>
+                            <span class="tech-badge">S3</span>
                             <span class="tech-badge">Glue</span>
                             <span class="tech-badge">Athena</span>
+                            <span class="tech-badge">PySpark</span>
                             <span class="tech-badge">Parquet</span>
                         </div>
                         <div class="project-links">
@@ -1289,14 +1348,14 @@
                     <div class="project-content">
                         <h3>Real-Time TF-IDF Search Engine</h3>
                         <p class="project-date">March 2025</p>
-                        <p>Scalable distributed search engine on AWS infrastructure with real-time ranking over large-scale text datasets.</p>
+                        <p>Distributed search engine that ranks large-scale text in real time using TF-IDF, built on Spark across an AWS multi-service stack.</p>
                         <ul class="project-bullets">
                             <li>Apache Spark on EMR for parallel processing</li>
-                            <li>TF-IDF algorithm with EC2 · S3 · DynamoDB · Lambda</li>
+                            <li>EC2 · S3 · DynamoDB · Lambda backing the query layer</li>
                         </ul>
                         <div class="tech-stack">
                             <span class="tech-badge">Apache Spark</span>
-                            <span class="tech-badge">AWS EMR</span>
+                            <span class="tech-badge">EMR</span>
                             <span class="tech-badge">DynamoDB</span>
                             <span class="tech-badge">Python</span>
                         </div>
@@ -1312,9 +1371,9 @@
                     <div class="project-content">
                         <h3>Campus Operations — Behavioral Segmentation</h3>
                         <p class="project-date">September 2025</p>
-                        <p>Unsupervised learning pipeline to segment departmental behavior patterns and optimize campus operations.</p>
+                        <p>Clustered campus department behavior patterns to surface where operations could be trimmed without hurting service quality.</p>
                         <ul class="project-bullets">
-                            <li>5 distinct segments via GMM + K-Means clustering</li>
+                            <li>5 distinct segments via GMM + K-Means</li>
                             <li>25% reduction in unnecessary support tickets</li>
                         </ul>
                         <div class="tech-stack">
@@ -1340,82 +1399,85 @@
 
             <div class="skills-grid">
                 <div class="skill-group">
-                    <div class="skill-group-title">Languages</div>
+                    <div class="skill-group-title">Architecture</div>
                     <div class="skill-tags">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">SQL</span>
-                        <span class="skill-tag">PySpark</span>
-                        <span class="skill-tag">Scala</span>
-                        <span class="skill-tag">R</span>
-                        <span class="skill-tag">Bash</span>
-                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Multi-tier Design</span>
+                        <span class="skill-tag">Serverless Patterns</span>
+                        <span class="skill-tag">VPC Networking</span>
+                        <span class="skill-tag">Cost Optimization</span>
+                        <span class="skill-tag">High Availability</span>
+                        <span class="skill-tag">CI/CD</span>
+                        <span class="skill-tag">Infrastructure as Code</span>
+                        <span class="skill-tag">Migration</span>
                     </div>
                 </div>
 
                 <div class="skill-group">
-                    <div class="skill-group-title">ML & AI</div>
+                    <div class="skill-group-title">AWS Services</div>
                     <div class="skill-tags">
-                        <span class="skill-tag">Scikit-learn</span>
-                        <span class="skill-tag">TensorFlow</span>
-                        <span class="skill-tag">PyTorch</span>
-                        <span class="skill-tag">SageMaker</span>
-                        <span class="skill-tag">Bedrock</span>
-                        <span class="skill-tag">RAG</span>
-                        <span class="skill-tag">Time-Series</span>
-                        <span class="skill-tag">Clustering</span>
-                    </div>
-                </div>
-
-                <div class="skill-group">
-                    <div class="skill-group-title">AWS & Cloud</div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Lambda</span>
-                        <span class="skill-tag">S3</span>
                         <span class="skill-tag">EC2</span>
+                        <span class="skill-tag">S3</span>
+                        <span class="skill-tag">RDS</span>
+                        <span class="skill-tag">VPC</span>
+                        <span class="skill-tag">Lambda</span>
+                        <span class="skill-tag">CloudFront</span>
+                        <span class="skill-tag">Cognito</span>
+                        <span class="skill-tag">DynamoDB</span>
+                        <span class="skill-tag">Bedrock</span>
+                        <span class="skill-tag">API Gateway</span>
+                        <span class="skill-tag">S3 Vectors</span>
+                        <span class="skill-tag">IAM</span>
                         <span class="skill-tag">Glue</span>
                         <span class="skill-tag">Athena</span>
                         <span class="skill-tag">EMR</span>
-                        <span class="skill-tag">Redshift</span>
-                        <span class="skill-tag">Lex</span>
                         <span class="skill-tag">CloudFormation</span>
-                        <span class="skill-tag">Azure ML</span>
+                        <span class="skill-tag">Elastic Beanstalk</span>
                     </div>
                 </div>
 
                 <div class="skill-group">
-                    <div class="skill-group-title">Data & Visualization</div>
+                    <div class="skill-group-title">AI & ML</div>
                     <div class="skill-tags">
-                        <span class="skill-tag">Tableau</span>
-                        <span class="skill-tag">Power BI</span>
-                        <span class="skill-tag">ETL Pipelines</span>
-                        <span class="skill-tag">Data Modeling</span>
-                        <span class="skill-tag">Matplotlib</span>
-                        <span class="skill-tag">Plotly</span>
+                        <span class="skill-tag">Bedrock Knowledge Bases</span>
+                        <span class="skill-tag">Bedrock AgentCore</span>
+                        <span class="skill-tag">Strands Agents SDK</span>
+                        <span class="skill-tag">RAG</span>
+                        <span class="skill-tag">Titan Embeddings V2</span>
+                        <span class="skill-tag">FAISS</span>
+                        <span class="skill-tag">MCP</span>
+                        <span class="skill-tag">Scikit-learn</span>
+                        <span class="skill-tag">TensorFlow</span>
+                        <span class="skill-tag">PyTorch</span>
                     </div>
                 </div>
 
                 <div class="skill-group">
-                    <div class="skill-group-title">Databases & Big Data</div>
+                    <div class="skill-group-title">Data & Analytics</div>
                     <div class="skill-tags">
                         <span class="skill-tag">PostgreSQL</span>
                         <span class="skill-tag">MySQL</span>
                         <span class="skill-tag">DynamoDB</span>
-                        <span class="skill-tag">CosmosDB</span>
                         <span class="skill-tag">Apache Spark</span>
-                        <span class="skill-tag">Hadoop</span>
-                        <span class="skill-tag">Hive</span>
+                        <span class="skill-tag">PySpark</span>
+                        <span class="skill-tag">ETL Pipelines</span>
+                        <span class="skill-tag">Data Modeling</span>
+                        <span class="skill-tag">Power BI</span>
+                        <span class="skill-tag">Tableau</span>
                     </div>
                 </div>
 
                 <div class="skill-group">
-                    <div class="skill-group-title">Tools & Practices</div>
+                    <div class="skill-group-title">DevOps & Programming</div>
                     <div class="skill-tags">
-                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">Bash</span>
                         <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">Linux/Unix</span>
-                        <span class="skill-tag">Jira</span>
-                        <span class="skill-tag">Agile</span>
-                        <span class="skill-tag">Model Validation</span>
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">GitHub Actions</span>
+                        <span class="skill-tag">nginx</span>
+                        <span class="skill-tag">Linux</span>
                     </div>
                 </div>
             </div>
@@ -1514,6 +1576,18 @@
                     </div>
                 </div>
             </div>
+
+            <div class="cert-group-label">Agentic AI</div>
+            <div class="certs-grid">
+                <div class="cert-card">
+                    <img src="besa.png" alt="BeSA Agentic AI Graduate" class="cert-badge-img">
+                    <div class="cert-info">
+                        <h3>BeSA Agentic AI Graduate</h3>
+                        <span class="issuer">BeSA</span>
+                        <span class="year">Strands Agents SDK · Bedrock AgentCore · MCP</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1591,8 +1665,8 @@
                 <a href="https://github.com/4uatul" target="_blank" title="GitHub">💻</a>
                 <a href="mailto:mail@atulbhardwaj.com" title="Email">📧</a>
             </div>
-            <p><strong>Atul Bhardwaj</strong> · Data Science Portfolio</p>
-            <p>Built with passion for data and impact.</p>
+            <p><strong>Atul Bhardwaj</strong> · AWS Solutions Architect</p>
+            <p>Building scalable, cost-effective cloud solutions.</p>
         </div>
     </footer>
 
