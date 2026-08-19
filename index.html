@@ -166,14 +166,33 @@
         }
 
         nav ul li a {
+            position: relative;
             color: rgba(255,255,255,0.8);
             text-decoration: none;
             font-size: 0.9rem;
             font-weight: 500;
             transition: color 0.2s;
+            padding-bottom: 4px;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -2px;
+            height: 2px;
+            border-radius: 2px;
+            background: var(--blue-mid);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.25s ease;
         }
 
         nav ul li a:hover { color: #fff; }
+        nav ul li a:hover::after,
+        nav ul li a.active::after { transform: scaleX(1); }
+        nav ul li a.active { color: #fff; }
 
         .hamburger {
             display: none;
@@ -217,6 +236,14 @@
                 linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
             background-size: auto, auto, 44px 44px, 44px 44px;
             pointer-events: none;
+        }
+
+        .hero-spotlight {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(500px circle at var(--x, 50%) var(--y, 30%), rgba(14,165,233,0.20), transparent 55%);
+            pointer-events: none;
+            transition: opacity 0.4s ease;
         }
 
         .hero::after {
@@ -328,16 +355,33 @@
         }
 
         .stat-card {
+            position: relative;
+            overflow: hidden;
             background: var(--card);
             border: 1px solid var(--border);
             border-radius: var(--radius);
             padding: 1.4rem 1.2rem;
             text-align: center;
             box-shadow: var(--shadow-sm);
-            transition: box-shadow 0.2s;
+            transition: box-shadow 0.2s, transform 0.2s;
         }
 
-        .stat-card:hover { box-shadow: var(--shadow-md); }
+        .stat-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(160px circle at var(--mx, 50%) var(--my, 50%), rgba(37,99,235,0.12), transparent 65%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .stat-card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+
+        .stat-card:hover::after { opacity: 1; }
 
         .stat-card .num {
             font-size: 2rem;
@@ -537,22 +581,34 @@
         }
 
         .project-card {
+            position: relative;
             background: var(--card);
             border: 1px solid var(--border);
             border-radius: var(--radius);
             overflow: hidden;
             box-shadow: var(--shadow-sm);
-            transition: all 0.25s ease;
+            transition: transform 0.15s ease-out, box-shadow 0.25s ease, border-color 0.25s ease;
             display: grid;
             grid-template-columns: 380px 1fr;
             align-items: stretch;
         }
 
+        .project-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(240px circle at var(--mx, 50%) var(--my, 50%), rgba(37,99,235,0.14), transparent 62%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
         .project-card:hover {
             box-shadow: var(--shadow-blue);
             border-color: rgba(37,99,235,0.2);
-            transform: translateY(-3px);
         }
+
+        .project-card:hover::after { opacity: 1; }
 
         .project-img-wrap {
             overflow: hidden;
@@ -1136,6 +1192,7 @@
 
     <!-- HERO -->
     <section class="hero">
+        <div class="hero-spotlight" id="heroSpotlight"></div>
         <div class="container">
             <img src="profile.jpg" alt="Atul Bhardwaj" class="profile-img" width="695" height="810" fetchpriority="high">
             <h1>Atul Bhardwaj</h1>
@@ -1846,6 +1903,62 @@
             el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
             observer.observe(el);
         });
+
+        // Nav scrollspy — highlight the section currently in view
+        const spySections = document.querySelectorAll('section[id]');
+        const spyLinks = document.querySelectorAll('#nav-menu a');
+        const spyObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    spyLinks.forEach(link => {
+                        link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+                    });
+                }
+            });
+        }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+        spySections.forEach(sec => spyObserver.observe(sec));
+
+        // Mouse-reactive effects — hero spotlight + card glow/tilt
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        if (!prefersReducedMotion) {
+            const heroEl = document.querySelector('.hero');
+            const heroSpotlight = document.getElementById('heroSpotlight');
+            if (heroEl && heroSpotlight) {
+                heroEl.addEventListener('mousemove', (e) => {
+                    const rect = heroEl.getBoundingClientRect();
+                    const x = ((e.clientX - rect.left) / rect.width) * 100;
+                    const y = ((e.clientY - rect.top) / rect.height) * 100;
+                    heroSpotlight.style.setProperty('--x', `${x}%`);
+                    heroSpotlight.style.setProperty('--y', `${y}%`);
+                });
+            }
+
+            document.querySelectorAll('.project-card').forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    const px = (x / rect.width) - 0.5;
+                    const py = (y / rect.height) - 0.5;
+                    card.style.setProperty('--mx', `${(x / rect.width) * 100}%`);
+                    card.style.setProperty('--my', `${(y / rect.height) * 100}%`);
+                    card.style.transform = `perspective(900px) rotateX(${(-py * 3).toFixed(2)}deg) rotateY(${(px * 3).toFixed(2)}deg) translateY(-3px)`;
+                });
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = '';
+                });
+            });
+
+            document.querySelectorAll('.stat-card').forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    card.style.setProperty('--mx', `${((e.clientX - rect.left) / rect.width) * 100}%`);
+                    card.style.setProperty('--my', `${((e.clientY - rect.top) / rect.height) * 100}%`);
+                });
+            });
+        }
     </script>
 </body>
 </html>
