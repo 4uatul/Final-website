@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atul Bhardwaj | Cloud &amp; Data Engineer</title>
-    <meta name="description" content="Atul Bhardwaj — Cloud &amp; Data Engineer building on AWS. MS in Computer Science (Seattle University), 3x AWS Certified, two production apps live.">
+    <meta name="description" content="Atul Bhardwaj, Cloud &amp; Data Engineer building on AWS. MS in Computer Science (Seattle University), 3x AWS Certified, two production apps live.">
     <link rel="canonical" href="https://atulbhardwaj.com/">
 
     <!-- Open Graph -->
@@ -34,7 +34,7 @@
         "url": "https://atulbhardwaj.com/",
         "image": "https://atulbhardwaj.com/profile.jpg",
         "jobTitle": "Cloud & Data Engineer",
-        "email": "mailto:mail@atulbhardwaj.com",
+        "email": "mailto:atuloninternet@icloud.com",
         "sameAs": [
             "https://www.linkedin.com/in/atul1000",
             "https://github.com/4uatul",
@@ -96,7 +96,7 @@
         }
 
         /* ============================================
-           SECTION HEADERS — consistent across all sections
+           SECTION HEADERS - consistent across all sections
            ============================================ */
         .section-header {
             text-align: center;
@@ -736,7 +736,7 @@
         }
 
         /* ============================================
-           SKILLS — toned down, compact tag grid
+           SKILLS - toned down, compact tag grid
            ============================================ */
         .skills { background: var(--card); }
 
@@ -920,7 +920,7 @@
         }
 
         /* ============================================
-           CERTIFICATIONS — grouped layout
+           CERTIFICATIONS - grouped layout
            ============================================ */
         .cert-group-label {
             font-size: 0.75rem;
@@ -1134,6 +1134,129 @@
         }
 
         /* ============================================
+           LITTLE DETAILS
+           ============================================ */
+        .wave {
+            display: inline-block;
+            transform-origin: 70% 70%;
+        }
+
+        @media (prefers-reduced-motion: no-preference) {
+            .wave { animation: wave 2.4s ease-in-out infinite; }
+        }
+
+        @keyframes wave {
+            0%, 60%, 100% { transform: rotate(0deg); }
+            10% { transform: rotate(14deg); }
+            20% { transform: rotate(-8deg); }
+            30% { transform: rotate(14deg); }
+            40% { transform: rotate(-4deg); }
+            50% { transform: rotate(10deg); }
+        }
+
+        .local-time {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.55);
+            margin: -0.3rem 0 0.3rem;
+        }
+
+        .local-time strong { color: rgba(255,255,255,0.85); font-weight: 600; }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--blue);
+            color: #fff;
+            border: none;
+            font-size: 1.15rem;
+            line-height: 1;
+            cursor: pointer;
+            box-shadow: var(--shadow-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transform: translateY(10px);
+            pointer-events: none;
+            transition: opacity 0.25s ease, transform 0.25s ease, background 0.2s;
+            z-index: 900;
+        }
+
+        .back-to-top.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+        .back-to-top:hover { background: #1d4ed8; }
+
+        @media (hover: hover) and (pointer: fine) {
+            body.custom-cursor, body.custom-cursor a, body.custom-cursor button {
+                cursor: none;
+            }
+            body.custom-cursor input,
+            body.custom-cursor textarea {
+                cursor: text;
+            }
+        }
+
+        .cursor-dot {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 8px;
+            height: 8px;
+            background: var(--blue-mid);
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            transition: opacity 0.2s ease;
+            z-index: 9999;
+        }
+
+        .cursor-ring {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 32px;
+            height: 32px;
+            border: 1.5px solid rgba(37,99,235,0.55);
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            transition: width 0.25s ease, height 0.25s ease, border-color 0.25s ease, background 0.25s ease, opacity 0.2s ease;
+            z-index: 9998;
+        }
+
+        .cursor-ring.hovering {
+            width: 50px;
+            height: 50px;
+            border-color: var(--blue-mid);
+            background: rgba(14,165,233,0.08);
+        }
+
+        .cursor-ring.text-target,
+        .cursor-dot.text-target {
+            opacity: 0;
+        }
+
+        .click-ripple {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 2px solid var(--blue-mid);
+            pointer-events: none;
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 0.6;
+            z-index: 9997;
+            animation: rippleExpand 0.6s ease-out forwards;
+        }
+
+        @keyframes rippleExpand {
+            to { transform: translate(-50%, -50%) scale(6); opacity: 0; }
+        }
+
+        /* ============================================
            RESPONSIVE
            ============================================ */
         @media (max-width: 768px) {
@@ -1195,8 +1318,8 @@
         <div class="hero-spotlight" id="heroSpotlight"></div>
         <div class="container">
             <img src="profile.jpg" alt="Atul Bhardwaj" class="profile-img" width="695" height="810" fetchpriority="high">
-            <h1>Atul Bhardwaj</h1>
-            <p class="tagline">Cloud &amp; Data Engineer who ships production AWS systems — from serverless RAG chatbots to three-tier platforms. Open to full-time roles.</p>
+            <h1>Atul Bhardwaj <span class="wave" aria-hidden="true">👋</span></h1>
+            <p class="tagline">Cloud &amp; Data Engineer who ships production AWS systems, from serverless RAG chatbots to three-tier platforms. Open to full-time roles.</p>
             <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; margin-bottom:2rem;">
                 <span style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); padding:0.45rem 1.1rem; border-radius:30px; font-size:0.92rem; color:#fff;">MS CS · Seattle University</span>
                 <span style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); padding:0.45rem 1.1rem; border-radius:30px; font-size:0.92rem; color:#fff;">3x AWS Certified</span>
@@ -1222,10 +1345,10 @@
             <div class="about-grid">
                 <div class="about-text">
                     <p>
-                        I recently completed my CS master's at Seattle University, where I spent most of my time building on AWS. I have <strong>two apps running in production right now</strong> — a serverless RAG chatbot and a three-tier platform — both built to solve real problems for real users on campus.
+                        I recently completed my CS master's at Seattle University, where I spent most of my time building on AWS. I have <strong>two apps running in production right now</strong>, a serverless RAG chatbot and a three-tier platform, both built to solve real problems for real users on campus.
                     </p>
                     <p>
-                        I lead the AWS Cloud Club at SU, where I grew the community from <strong>13 to 90+ members</strong>, secured <strong>$10K in AWS credits</strong>, and co-hosted a 24-hour hackathon with UW after cold-emailing Jeff Barr. I like figuring out the right architecture for a problem — not just the most popular one.
+                        I lead the AWS Cloud Club at SU, where I grew the community from <strong>13 to 90+ members</strong>, secured <strong>$10K in AWS credits</strong>, and co-hosted a 24-hour hackathon with UW after cold-emailing Jeff Barr. I like figuring out the right architecture for a problem, not just the most popular one.
                     </p>
                     <p>
                         I'm <strong>3x AWS certified</strong> and a BeSA Agentic AI graduate (Strands Agents SDK, Bedrock AgentCore, MCP). I'm on STEM OPT through mid-2029.
@@ -1264,7 +1387,7 @@
 
             <div class="edu-timeline">
                 <div class="edu-item">
-                    <div class="degree">Masters in Computer Science — Data Science Specialization</div>
+                    <div class="degree">Masters in Computer Science (Data Science Specialization)</div>
                     <div class="school">Seattle University</div>
                     <div class="edu-meta">GPA 3.6 &nbsp;·&nbsp; Graduated Jun 2026 &nbsp;·&nbsp; Seattle, WA</div>
                     <div class="courses">
@@ -1274,13 +1397,13 @@
                 </div>
 
                 <div class="edu-item">
-                    <div class="degree">Bachelor of Technology — Computer Science Engineering</div>
+                    <div class="degree">Bachelor of Technology in Computer Science Engineering</div>
                     <div class="school">Maharshi Dayanand University</div>
                     
 
                     <div class="edu-meta">GPA 3.5 &nbsp;·&nbsp; Sep 2020 – May 2024 &nbsp;·&nbsp; Haryana, India</div>
                     <div class="courses">
-                        <strong>Activities:</strong> Data Science Club Captain — led 100+ members, organized webinars,
+                        <strong>Activities:</strong> Data Science Club Captain, led 100+ members, organized webinars,
                         guest speaker sessions, and coding competitions
                     </div>
 
@@ -1342,17 +1465,17 @@
                 <p>Solving real-world problems with data and code</p>
             </div>
 
-            <!-- AWS Cloud — Live Production Applications -->
-            <div class="project-category-label">AWS Cloud — Live Production</div>
+            <!-- AWS Cloud - Live Production Applications -->
+            <div class="project-category-label">AWS Cloud · Live Production</div>
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-img-wrap"><img src="suchatbot.jpg" alt="SUChatBot - Campus Services RAG Chatbot" width="720" height="900" loading="lazy"></div>
                     <div class="project-content">
-                        <h3>SUChatBot — Campus RAG Chatbot</h3>
+                        <h3>SUChatBot: Campus RAG Chatbot</h3>
                         <p class="project-date">May 2026 · Live</p>
-                        <p>Replaced 53 static SharePoint pages with a serverless chatbot that answers questions for 5 campus departments instantly — no staff needed.</p>
+                        <p>Replaced 53 static SharePoint pages with a serverless chatbot that answers questions for 5 campus departments instantly, no staff needed.</p>
                         <ul class="project-bullets">
-                            <li>S3 Vectors over OpenSearch — ~$350/month saved, sub-3s responses</li>
+                            <li>S3 Vectors over OpenSearch: ~$350/month saved, sub-3s responses</li>
                             <li>Fully serverless: Lambda + API Gateway + CloudFront</li>
                             <li>Claude Haiku 4.5 for inference; Titan Embeddings V2 for vectors</li>
                         </ul>
@@ -1403,9 +1526,9 @@
                 <div class="project-card">
                     <div class="project-img-wrap"><img src="ai-project2.jpg" alt="NeatCode - AI Code Refactoring" width="700" height="326" loading="lazy"></div>
                     <div class="project-content">
-                        <h3>NeatCode — AI Code Refactoring</h3>
+                        <h3>NeatCode: AI Code Refactoring</h3>
                         <p class="project-date">March 2026</p>
-                        <p>Paste messy code, get it cleaned up by Gemini AI with an explanation for every change — so you actually understand what changed.</p>
+                        <p>Paste messy code, get it cleaned up by Gemini AI with an explanation for every change, so you actually understand what changed.</p>
                         <ul class="project-bullets">
                             <li>Dockerized Flask on Elastic Beanstalk; React on S3 + CloudFront</li>
                             <li>Input guard rails reject non-code submissions</li>
@@ -1430,7 +1553,7 @@
                     <div class="project-content">
                         <h3>Amazon Lex Banking Chatbot</h3>
                         <p class="project-date">November 2025</p>
-                        <p>Conversational chatbot for banking transactions — custom intents, slot types, and multi-turn dialogue, all wired to Lambda for live responses.</p>
+                        <p>Conversational chatbot for banking transactions with custom intents, slot types, and multi-turn dialogue, all wired to Lambda for live responses.</p>
                         <ul class="project-bullets">
                             <li>Lambda integration for dynamic, context-aware responses</li>
                             <li>Deployed via CloudFormation (infrastructure as code)</li>
@@ -1453,7 +1576,7 @@
                 <div class="project-card">
                     <div class="project-img-wrap"><img src="de-project1.jpg" alt="YouTube Trending Analytics AWS Data Lake" width="1263" height="724" loading="lazy"></div>
                     <div class="project-content">
-                        <h3>YouTube Trending Analytics — Data Lake</h3>
+                        <h3>YouTube Trending Analytics: Data Lake</h3>
                         <p class="project-date">November 2025</p>
                         <p>Serverless ETL pipeline that ingests 1,000+ trending videos across 5 regions and makes them queryable in seconds.</p>
                         <ul class="project-bullets">
@@ -1503,7 +1626,7 @@
                 <div class="project-card">
                     <div class="project-img-wrap"><img src="ds-project1.png" alt="Campus Operations Analytics" width="404" height="333" loading="lazy"></div>
                     <div class="project-content">
-                        <h3>Campus Operations — Behavioral Segmentation</h3>
+                        <h3>Campus Operations: Behavioral Segmentation</h3>
                         <p class="project-date">September 2025</p>
                         <p>Clustered campus department behavior patterns to surface where operations could be trimmed without hurting service quality.</p>
                         <ul class="project-bullets">
@@ -1791,11 +1914,12 @@
 
             <div class="contact-layout">
                 <div class="contact-links">
-                    <a href="mailto:mail@atulbhardwaj.com" class="contact-item">
+                    <p class="local-time" id="localTime" aria-live="off"></p>
+                    <a href="mailto:atuloninternet@icloud.com" class="contact-item">
                         <span class="icon">📧</span>
                         <div class="ci-text">
                             <strong>Email</strong>
-                            <span>mail@atulbhardwaj.com</span>
+                            <span>atuloninternet@icloud.com</span>
                         </div>
                     </a>
                     <div class="contact-item">
@@ -1822,7 +1946,7 @@
                 </div>
 
                 <div class="contact-form">
-                    <form id="contactForm" action="https://formsubmit.co/mail@atulbhardwaj.com" method="POST">
+                    <form id="contactForm" action="https://formsubmit.co/atuloninternet@icloud.com" method="POST">
                         <input type="hidden" name="_subject" value="New message from atulbhardwaj.com">
                         <input type="hidden" name="_template" value="table">
                         <input type="hidden" name="_next" value="https://atulbhardwaj.com/#contact">
@@ -1856,14 +1980,28 @@
             <div class="social-links">
                 <a href="https://www.linkedin.com/in/atul1000" target="_blank" title="LinkedIn">💼</a>
                 <a href="https://github.com/4uatul" target="_blank" title="GitHub">💻</a>
-                <a href="mailto:mail@atulbhardwaj.com" title="Email">📧</a>
+                <a href="mailto:atuloninternet@icloud.com" title="Email">📧</a>
             </div>
             <p><strong>Atul Bhardwaj</strong> · Cloud &amp; Data Engineer</p>
             <p>Building scalable, cost-effective cloud solutions.</p>
         </div>
     </footer>
 
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
+
     <script>
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        // A little something for anyone poking around in devtools
+        console.log('%c👋 hey, curious about the code?', 'font-size:15px; font-weight:700; color:#2563eb;');
+        console.log('%cNo framework, no build step, just hand-written HTML/CSS/JS. If you\'re hiring for cloud or data roles, let\'s talk: atuloninternet@icloud.com', 'font-size:12px; color:#64748b;');
+
+        // Miss you already
+        const defaultTitle = document.title;
+        document.addEventListener('visibilitychange', () => {
+            document.title = document.hidden ? '👋 come back!' : defaultTitle;
+        });
+
         // Hamburger menu
         const hamburger = document.getElementById('hamburger');
         const navMenu = document.getElementById('nav-menu');
@@ -1904,7 +2042,7 @@
             observer.observe(el);
         });
 
-        // Nav scrollspy — highlight the section currently in view
+        // Nav scrollspy - highlight the section currently in view
         const spySections = document.querySelectorAll('section[id]');
         const spyLinks = document.querySelectorAll('#nav-menu a');
         const spyObserver = new IntersectionObserver((entries) => {
@@ -1919,9 +2057,7 @@
         }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
         spySections.forEach(sec => spyObserver.observe(sec));
 
-        // Mouse-reactive effects — hero spotlight + card glow/tilt
-        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
+        // Mouse-reactive effects - hero spotlight + card glow/tilt
         if (!prefersReducedMotion) {
             const heroEl = document.querySelector('.hero');
             const heroSpotlight = document.getElementById('heroSpotlight');
@@ -1958,7 +2094,90 @@
                     card.style.setProperty('--my', `${((e.clientY - rect.top) / rect.height) * 100}%`);
                 });
             });
+
+            // Little ripple wherever you click
+            document.addEventListener('click', (e) => {
+                const ripple = document.createElement('div');
+                ripple.className = 'click-ripple';
+                ripple.style.left = `${e.clientX}px`;
+                ripple.style.top = `${e.clientY}px`;
+                document.body.appendChild(ripple);
+                ripple.addEventListener('animationend', () => ripple.remove());
+            });
+
+            // Custom cursor - a dot that leads, a ring that catches up
+            if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+                document.body.classList.add('custom-cursor');
+                const dot = document.createElement('div');
+                dot.className = 'cursor-dot';
+                const ring = document.createElement('div');
+                ring.className = 'cursor-ring';
+                document.body.append(dot, ring);
+
+                let mouseX = window.innerWidth / 2, mouseY = window.innerHeight / 2;
+                let ringX = mouseX, ringY = mouseY;
+
+                window.addEventListener('mousemove', (e) => {
+                    mouseX = e.clientX;
+                    mouseY = e.clientY;
+                    dot.style.left = `${mouseX}px`;
+                    dot.style.top = `${mouseY}px`;
+                });
+
+                (function chaseRing() {
+                    ringX += (mouseX - ringX) * 0.18;
+                    ringY += (mouseY - ringY) * 0.18;
+                    ring.style.left = `${ringX}px`;
+                    ring.style.top = `${ringY}px`;
+                    requestAnimationFrame(chaseRing);
+                })();
+
+                document.querySelectorAll('a, button, .project-card, .cert-card, .stat-card, .skill-tag').forEach(el => {
+                    el.addEventListener('mouseenter', () => ring.classList.add('hovering'));
+                    el.addEventListener('mouseleave', () => ring.classList.remove('hovering'));
+                });
+
+                document.querySelectorAll('input, textarea').forEach(el => {
+                    el.addEventListener('mouseenter', () => { dot.classList.add('text-target'); ring.classList.add('text-target'); });
+                    el.addEventListener('mouseleave', () => { dot.classList.remove('text-target'); ring.classList.remove('text-target'); });
+                });
+
+                document.addEventListener('mouseleave', () => { dot.style.opacity = '0'; ring.style.opacity = '0'; });
+                document.addEventListener('mouseenter', () => { dot.style.opacity = '1'; ring.style.opacity = '1'; });
+            }
         }
+
+        // Local time in Seattle, and a guess at what I'm up to
+        const localTimeEl = document.getElementById('localTime');
+        if (localTimeEl) {
+            const updateLocalTime = () => {
+                const now = new Date();
+                const time = new Intl.DateTimeFormat('en-US', {
+                    timeZone: 'America/Los_Angeles', hour: 'numeric', minute: '2-digit', hour12: true
+                }).format(now);
+                const hour = parseInt(new Intl.DateTimeFormat('en-US', {
+                    timeZone: 'America/Los_Angeles', hour: 'numeric', hour12: false
+                }).format(now), 10);
+
+                let status = '💤 probably asleep';
+                if (hour >= 7 && hour < 12) status = '☕ probably starting the day';
+                else if (hour >= 12 && hour < 17) status = '💻 probably heads-down building something';
+                else if (hour >= 17 && hour < 22) status = '🌆 probably wrapping up for the day';
+
+                localTimeEl.innerHTML = `🕐 <strong>${time}</strong> in Seattle · ${status}`;
+            };
+            updateLocalTime();
+            setInterval(updateLocalTime, 60000);
+        }
+
+        // Back to top
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            backToTop.classList.toggle('visible', window.scrollY > 600);
+        });
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+        });
     </script>
 </body>
 </html>
