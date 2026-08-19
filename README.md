@@ -62,14 +62,12 @@ Three-tier AWS app unifying lost-and-found tracking across 4 campus offices, run
 
 ### 📡 GitHub Signal
 
-<p align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=4uatul&show_icons=true&theme=transparent&hide_border=true&title_color=0EA5E9&icon_color=2563EB&text_color=475569" alt="GitHub stats" />
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=4uatul&layout=compact&theme=transparent&hide_border=true&title_color=0EA5E9&text_color=475569&langs_count=8" alt="Top languages" />
-</p>
+<div align="center">
 
-<p align="center">
-  <img src="https://streak-stats.demolab.com/?user=4uatul&theme=transparent&hide_border=true&ring=2563EB&fire=0EA5E9&currStreakLabel=0EA5E9" alt="GitHub streak" />
-</p>
+![Followers](https://img.shields.io/github/followers/4uatul?style=for-the-badge&logo=github&color=2563EB&label=FOLLOWERS)
+![Public Repos](https://img.shields.io/badge/dynamic/json?style=for-the-badge&label=PUBLIC%20REPOS&query=public_repos&url=https://api.github.com/users/4uatul&color=0EA5E9)
+
+</div>
 
 <br>
 
