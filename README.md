@@ -27,7 +27,7 @@ STEM OPT through mid-2029
 
 <br>
 
-### 🚀 What I'm Building
+### 🚀 Live in Production
 
 <table>
 <tr>
@@ -57,17 +57,6 @@ Three-tier AWS app unifying lost-and-found tracking across 4 campus offices, run
 [![AWS Solutions Architect Associate](https://img.shields.io/badge/AWS-Solutions%20Architect%20Associate-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white)](https://www.credly.com/badges/da566c70-a6e6-4843-a0bb-b25d89c13474/public_url)
 [![AWS Cloud Practitioner](https://img.shields.io/badge/AWS-Cloud%20Practitioner-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white)](https://www.credly.com/badges/0b1933e0-8858-4f45-9eef-3116bca7cd09/public_url)
 [![AWS AI Practitioner](https://img.shields.io/badge/AWS-AI%20Practitioner-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white)](https://www.credly.com/badges/714cc18b-8f49-4b77-8488-6942304041fb/public_url)
-
-<br>
-
-### 📡 GitHub Signal
-
-<div align="center">
-
-![Followers](https://img.shields.io/github/followers/4uatul?style=for-the-badge&logo=github&color=2563EB&label=FOLLOWERS)
-![Public Repos](https://img.shields.io/badge/dynamic/json?style=for-the-badge&label=PUBLIC%20REPOS&query=public_repos&url=https://api.github.com/users/4uatul&color=0EA5E9)
-
-</div>
 
 <br>
 
