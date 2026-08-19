@@ -1,34 +1,88 @@
-# Hey, I'm Atul 👋
+<div align="center">
 
-I'm a CS grad student at Seattle University building real things on AWS. Not side projects, two apps actually running in production, serving real users on campus right now.
+# Atul Bhardwaj
 
----
+[![Typing SVG](https://readme-typing-svg.demolab.com/?font=Fira+Code&weight=500&size=24&pause=1000&color=0EA5E9&center=true&vCenter=true&width=560&height=50&lines=Cloud+%26+Data+Engineer;Building+production+systems+on+AWS;3x+AWS+Certified;Open+to+full-time+roles)](https://atulbhardwaj.com)
 
-### What I'm working on
+<img src="https://skillicons.dev/icons?i=aws,py,js,react,flask,docker,postgres,git,githubactions,linux,bash,nginx" alt="tech stack" />
 
-**[SUChatBot](https://suchatbot.atulbhardwaj.com)**: Replaced 53 static SharePoint pages with a serverless RAG chatbot on AWS. Students across 5 departments get instant answers instead of waiting for staff. Built with Bedrock, Lambda, S3 Vectors, and CloudFront. Chose S3 Vectors over OpenSearch and saved ~$350/month.
+</div>
 
-**[Lost & Found Platform](https://lostandfound.atulbhardwaj.com)**: Three-tier AWS app unifying lost-and-found tracking across 4 campus offices. Custom VPC, public/private subnets across two AZs, Cognito auth scoped to @seattleu.edu. Running at $0.90/day.
+<br>
 
----
+### `$ whoami`
 
-### A bit more about me
+```bash
+$ whoami
+Atul Bhardwaj, Cloud & Data Engineer based in Seattle, WA
 
-- 🎓 MS Computer Science @ Seattle University (June 2026)
-- ☁️ 3x AWS Certified: Solutions Architect Associate, Cloud Practitioner, AI Practitioner
-- 🤖 BeSA Agentic AI Graduate: Strands Agents SDK, Bedrock AgentCore, MCP
-- 👥 Grew the SU AWS Cloud Club from 13 → 90+ members, got $10K in AWS credits, co-hosted a 24hr hackathon with UW
-- 🛂 STEM OPT through mid-2029
+$ status --current
+Two apps live in production on AWS, MS in Computer Science (Seattle University)
+Leading the AWS Cloud Club at SU, grew it from 13 to 90+ members
+Open to full-time Cloud / Data Engineering roles
 
----
+$ uptime
+STEM OPT through mid-2029
+```
 
-### Stack I reach for
+<br>
 
-`AWS` `Python` `React` `Flask` `PostgreSQL` `Docker` `GitHub Actions`  
-`Bedrock` `Lambda` `S3` `RDS` `VPC` `Cognito` `CloudFront` `API Gateway`
+### 🚀 What I'm Building
 
----
+<table>
+<tr>
+<td width="50%" valign="top">
 
-### Find me
+**[SUChatBot](https://suchatbot.atulbhardwaj.com)**
+Serverless RAG chatbot that replaced 53 static SharePoint pages, answering questions for 5 campus departments instantly.
 
-🌐 [atulbhardwaj.com](https://atulbhardwaj.com) &nbsp;|&nbsp; 💼 [LinkedIn](https://linkedin.com/in/atul1000) &nbsp;|&nbsp; 📬 atuloninternet@icloud.com
+`Bedrock` `Lambda` `S3 Vectors` `API Gateway` `CloudFront`
+
+</td>
+<td width="50%" valign="top">
+
+**[Lost & Found Platform](https://lostandfound.atulbhardwaj.com)**
+Three-tier AWS app unifying lost-and-found tracking across 4 campus offices, running at $0.90/day.
+
+`EC2` `RDS` `VPC` `Cognito` `GitHub Actions`
+
+</td>
+</tr>
+</table>
+
+<br>
+
+### ☁️ Certifications
+
+[![AWS Solutions Architect Associate](https://img.shields.io/badge/AWS-Solutions%20Architect%20Associate-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white)](https://www.credly.com/badges/da566c70-a6e6-4843-a0bb-b25d89c13474/public_url)
+[![AWS Cloud Practitioner](https://img.shields.io/badge/AWS-Cloud%20Practitioner-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white)](https://www.credly.com/badges/0b1933e0-8858-4f45-9eef-3116bca7cd09/public_url)
+[![AWS AI Practitioner](https://img.shields.io/badge/AWS-AI%20Practitioner-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white)](https://www.credly.com/badges/714cc18b-8f49-4b77-8488-6942304041fb/public_url)
+
+<br>
+
+### 📡 GitHub Signal
+
+<p align="center">
+  <img height="165" src="https://github-readme-stats.vercel.app/api?username=4uatul&show_icons=true&theme=transparent&hide_border=true&title_color=0EA5E9&icon_color=2563EB&text_color=475569" alt="GitHub stats" />
+  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=4uatul&layout=compact&theme=transparent&hide_border=true&title_color=0EA5E9&text_color=475569&langs_count=8" alt="Top languages" />
+</p>
+
+<p align="center">
+  <img src="https://streak-stats.demolab.com/?user=4uatul&theme=transparent&hide_border=true&ring=2563EB&fire=0EA5E9&currStreakLabel=0EA5E9" alt="GitHub streak" />
+</p>
+
+<br>
+
+### Let's Connect
+
+<div align="center">
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/atul1000)
+[![Portfolio](https://img.shields.io/badge/Portfolio-0EA5E9?style=for-the-badge)](https://atulbhardwaj.com)
+[![Email](https://img.shields.io/badge/Email-3693F3?style=for-the-badge&logo=icloud&logoColor=white)](mailto:atuloninternet@icloud.com)
+
+<br><br>
+
+![Profile Views](https://komarev.com/ghpvc/?username=4uatul&color=0e75b6&style=flat-square&label=PROFILE+VIEWS)
+
+</div>
