@@ -3,7 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atul Bhardwaj | AWS Solutions Architect</title>
+    <title>Atul Bhardwaj | Cloud &amp; Data Engineer</title>
+    <meta name="description" content="Atul Bhardwaj — Cloud &amp; Data Engineer building on AWS. MS in Computer Science (Seattle University), 3x AWS Certified, two production apps live.">
+    <link rel="canonical" href="https://atulbhardwaj.com/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://atulbhardwaj.com/">
+    <meta property="og:title" content="Atul Bhardwaj | Cloud &amp; Data Engineer">
+    <meta property="og:description" content="Cloud &amp; Data Engineer building on AWS. MS in Computer Science (Seattle University), 3x AWS Certified, two production apps live.">
+    <meta property="og:image" content="https://atulbhardwaj.com/profile.jpg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Atul Bhardwaj | Cloud &amp; Data Engineer">
+    <meta name="twitter:description" content="Cloud &amp; Data Engineer building on AWS. MS in Computer Science (Seattle University), 3x AWS Certified, two production apps live.">
+    <meta name="twitter:image" content="https://atulbhardwaj.com/profile.jpg">
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f172a'/%3E%3Ctext x='32' y='42' font-family='Arial, sans-serif' font-weight='700' font-size='26' fill='%230ea5e9' text-anchor='middle'%3EAB%3C/text%3E%3C/svg%3E">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Atul Bhardwaj",
+        "url": "https://atulbhardwaj.com/",
+        "image": "https://atulbhardwaj.com/profile.jpg",
+        "jobTitle": "Cloud & Data Engineer",
+        "email": "mailto:mail@atulbhardwaj.com",
+        "sameAs": [
+            "https://www.linkedin.com/in/atul1000",
+            "https://github.com/4uatul",
+            "https://www.credly.com/users/atul_bhardwaj"
+        ],
+        "alumniOf": [
+            { "@type": "CollegeOrUniversity", "name": "Seattle University" },
+            { "@type": "CollegeOrUniversity", "name": "Maharshi Dayanand University" }
+        ]
+    }
+    </script>
+
     <style>
         /* ============================================
            DESIGN TOKENS
@@ -29,7 +72,7 @@
         html { scroll-behavior: smooth; }
 
         body {
-            font-family: 'Segoe UI', system-ui, sans-serif;
+            font-family: 'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif;
             line-height: 1.7;
             color: var(--text);
             background: var(--surface);
@@ -46,6 +89,10 @@
 
         section {
             padding: 90px 2rem;
+        }
+
+        section[id] {
+            scroll-margin-top: 76px;
         }
 
         /* ============================================
@@ -159,6 +206,19 @@
             overflow: hidden;
         }
 
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                radial-gradient(circle at 18% 15%, rgba(14,165,233,0.20), transparent 42%),
+                radial-gradient(circle at 82% 5%, rgba(37,99,235,0.28), transparent 40%),
+                linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+            background-size: auto, auto, 44px 44px, 44px 44px;
+            pointer-events: none;
+        }
+
         .hero::after {
             content: '';
             position: absolute;
@@ -219,13 +279,13 @@
         }
 
         .btn-primary {
-            background: var(--blue);
+            background: linear-gradient(135deg, var(--blue), var(--blue-mid));
             color: #fff;
             box-shadow: 0 4px 14px rgba(37,99,235,0.4);
         }
 
         .btn-primary:hover {
-            background: #1d4ed8;
+            box-shadow: 0 8px 22px rgba(37,99,235,0.5);
             transform: translateY(-2px);
         }
 
@@ -491,6 +551,7 @@
         .project-card:hover {
             box-shadow: var(--shadow-blue);
             border-color: rgba(37,99,235,0.2);
+            transform: translateY(-3px);
         }
 
         .project-img-wrap {
@@ -606,6 +667,17 @@
         }
 
         .project-link:hover { background: #1d4ed8; }
+
+        .project-link-disabled {
+            padding: 0.45rem 1.1rem;
+            background: var(--surface);
+            color: var(--muted);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: default;
+        }
 
         /* ============================================
            SKILLS — toned down, compact tag grid
@@ -1065,9 +1137,9 @@
     <!-- HERO -->
     <section class="hero">
         <div class="container">
-            <img src="profile.jpg" alt="Atul Bhardwaj" class="profile-img">
+            <img src="profile.jpg" alt="Atul Bhardwaj" class="profile-img" width="695" height="810" fetchpriority="high">
             <h1>Atul Bhardwaj</h1>
-            <p class="tagline">Cloud architect at heart. I build on AWS, share the journey, and solve problems for real people.</p>
+            <p class="tagline">Cloud &amp; Data Engineer who ships production AWS systems — from serverless RAG chatbots to three-tier platforms. Open to full-time roles.</p>
             <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; margin-bottom:2rem;">
                 <span style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); padding:0.45rem 1.1rem; border-radius:30px; font-size:0.92rem; color:#fff;">MS CS · Seattle University</span>
                 <span style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); padding:0.45rem 1.1rem; border-radius:30px; font-size:0.92rem; color:#fff;">3x AWS Certified</span>
@@ -1093,7 +1165,7 @@
             <div class="about-grid">
                 <div class="about-text">
                     <p>
-                        I'm finishing my CS master's at Seattle University and spending most of my time building on AWS. I have <strong>two apps running in production right now</strong> — a serverless RAG chatbot and a three-tier platform — both built to solve real problems for real users on campus.
+                        I recently completed my CS master's at Seattle University, where I spent most of my time building on AWS. I have <strong>two apps running in production right now</strong> — a serverless RAG chatbot and a three-tier platform — both built to solve real problems for real users on campus.
                     </p>
                     <p>
                         I lead the AWS Cloud Club at SU, where I grew the community from <strong>13 to 90+ members</strong>, secured <strong>$10K in AWS credits</strong>, and co-hosted a 24-hour hackathon with UW after cold-emailing Jeff Barr. I like figuring out the right architecture for a problem — not just the most popular one.
@@ -1137,7 +1209,7 @@
                 <div class="edu-item">
                     <div class="degree">Masters in Computer Science — Data Science Specialization</div>
                     <div class="school">Seattle University</div>
-                    <div class="edu-meta">GPA 3.6 &nbsp;·&nbsp; Expected Jun 2026 &nbsp;·&nbsp; Seattle, WA</div>
+                    <div class="edu-meta">GPA 3.6 &nbsp;·&nbsp; Graduated Jun 2026 &nbsp;·&nbsp; Seattle, WA</div>
                     <div class="courses">
                         <strong>Courses:</strong> Artificial Intelligence, Machine Learning, Data Science,
                         Big Data Analytics, Visual Analytics, LLM
@@ -1217,7 +1289,7 @@
             <div class="project-category-label">AWS Cloud — Live Production</div>
             <div class="projects-grid">
                 <div class="project-card">
-                    <div class="project-img-wrap"><img src="suchatbot.png" alt="SUChatBot - Campus Services RAG Chatbot"></div>
+                    <div class="project-img-wrap"><img src="suchatbot.jpg" alt="SUChatBot - Campus Services RAG Chatbot" width="720" height="900" loading="lazy"></div>
                     <div class="project-content">
                         <h3>SUChatBot — Campus RAG Chatbot</h3>
                         <p class="project-date">May 2026 · Live</p>
@@ -1242,7 +1314,7 @@
                 </div>
 
                 <div class="project-card">
-                    <div class="project-img-wrap"><img src="lostandfound.png" alt="Lost and Found Platform"></div>
+                    <div class="project-img-wrap"><img src="lostandfound.jpg" alt="Lost and Found Platform" width="900" height="675" loading="lazy"></div>
                     <div class="project-content">
                         <h3>Lost &amp; Found Platform</h3>
                         <p class="project-date">March 2026 · Live · $0.90/day</p>
@@ -1272,7 +1344,7 @@
             <div class="project-category-label">AI / ML</div>
             <div class="projects-grid">
                 <div class="project-card">
-                    <div class="project-img-wrap"><img src="ai-project2.jpg" alt="NeatCode - AI Code Refactoring"></div>
+                    <div class="project-img-wrap"><img src="ai-project2.jpg" alt="NeatCode - AI Code Refactoring" width="700" height="326" loading="lazy"></div>
                     <div class="project-content">
                         <h3>NeatCode — AI Code Refactoring</h3>
                         <p class="project-date">March 2026</p>
@@ -1297,7 +1369,7 @@
                 </div>
 
                 <div class="project-card">
-                    <div class="project-img-wrap"><img src="ai-project1.jpg" alt="Amazon Lex Banking Chatbot"></div>
+                    <div class="project-img-wrap"><img src="ai-project1.jpg" alt="Amazon Lex Banking Chatbot" width="652" height="652" loading="lazy"></div>
                     <div class="project-content">
                         <h3>Amazon Lex Banking Chatbot</h3>
                         <p class="project-date">November 2025</p>
@@ -1311,6 +1383,9 @@
                             <span class="tech-badge">Lambda</span>
                             <span class="tech-badge">CloudFormation</span>
                         </div>
+                        <div class="project-links">
+                            <span class="project-link-disabled">Private Repository</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1319,7 +1394,7 @@
             <div class="project-category-label">Data Engineering &amp; Cloud</div>
             <div class="projects-grid">
                 <div class="project-card">
-                    <div class="project-img-wrap"><img src="de-project1.jpg" alt="YouTube Trending Analytics AWS Data Lake"></div>
+                    <div class="project-img-wrap"><img src="de-project1.jpg" alt="YouTube Trending Analytics AWS Data Lake" width="1263" height="724" loading="lazy"></div>
                     <div class="project-content">
                         <h3>YouTube Trending Analytics — Data Lake</h3>
                         <p class="project-date">November 2025</p>
@@ -1343,7 +1418,7 @@
                 </div>
 
                 <div class="project-card">
-                    <div class="project-img-wrap"><img src="de-project2.jpg" alt="Real-Time TF-IDF Search Engine"></div>
+                    <div class="project-img-wrap"><img src="de-project2.jpg" alt="Real-Time TF-IDF Search Engine" width="925" height="369" loading="lazy"></div>
                     <div class="project-content">
                         <h3>Real-Time TF-IDF Search Engine</h3>
                         <p class="project-date">January 2026</p>
@@ -1358,6 +1433,9 @@
                             <span class="tech-badge">DynamoDB</span>
                             <span class="tech-badge">Python</span>
                         </div>
+                        <div class="project-links">
+                            <span class="project-link-disabled">Private Repository</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1366,7 +1444,7 @@
             <div class="project-category-label">Data Science &amp; Analytics</div>
             <div class="projects-grid">
                 <div class="project-card">
-                    <div class="project-img-wrap"><img src="ds-project1.png" alt="Campus Operations Analytics"></div>
+                    <div class="project-img-wrap"><img src="ds-project1.png" alt="Campus Operations Analytics" width="404" height="333" loading="lazy"></div>
                     <div class="project-content">
                         <h3>Campus Operations — Behavioral Segmentation</h3>
                         <p class="project-date">September 2025</p>
@@ -1380,6 +1458,9 @@
                             <span class="tech-badge">K-Means</span>
                             <span class="tech-badge">GMM</span>
                             <span class="tech-badge">Scikit-learn</span>
+                        </div>
+                        <div class="project-links">
+                            <span class="project-link-disabled">Private Repository</span>
                         </div>
                     </div>
                 </div>
@@ -1539,7 +1620,7 @@
                 <div class="cert-card">
                     <a href="https://www.credly.com/badges/da566c70-a6e6-4843-a0bb-b25d89c13474/public_url" target="_blank" class="cert-link-icon" title="View on Credly">↗</a>
                     <a href="https://www.credly.com/badges/da566c70-a6e6-4843-a0bb-b25d89c13474/public_url" target="_blank">
-                        <img src="saa.png" alt="AWS Solutions Architect Associate" class="cert-badge-img">
+                        <img src="saa.png" alt="AWS Solutions Architect Associate" class="cert-badge-img" width="320" height="320" loading="lazy">
                     </a>
                     <div class="cert-info">
                         <h3>Solutions Architect – Associate</h3>
@@ -1551,7 +1632,7 @@
                 <div class="cert-card">
                     <a href="https://www.credly.com/badges/0b1933e0-8858-4f45-9eef-3116bca7cd09/public_url" target="_blank" class="cert-link-icon" title="View on Credly">↗</a>
                     <a href="https://www.credly.com/badges/0b1933e0-8858-4f45-9eef-3116bca7cd09/public_url" target="_blank">
-                        <img src="ccp.png" alt="AWS Cloud Practitioner" class="cert-badge-img">
+                        <img src="ccp.png" alt="AWS Cloud Practitioner" class="cert-badge-img" width="320" height="320" loading="lazy">
                     </a>
                     <div class="cert-info">
                         <h3>Certified Cloud Practitioner</h3>
@@ -1563,7 +1644,7 @@
                 <div class="cert-card">
                     <a href="https://www.credly.com/badges/714cc18b-8f49-4b77-8488-6942304041fb/public_url" target="_blank" class="cert-link-icon" title="View on Credly">↗</a>
                     <a href="https://www.credly.com/badges/714cc18b-8f49-4b77-8488-6942304041fb/public_url" target="_blank">
-                        <img src="aip.png" alt="AWS AI Practitioner" class="cert-badge-img">
+                        <img src="aip.png" alt="AWS AI Practitioner" class="cert-badge-img" width="320" height="320" loading="lazy">
                     </a>
                     <div class="cert-info">
                         <h3>AI Practitioner</h3>
@@ -1573,7 +1654,7 @@
                 </div>
 
                 <div class="cert-card in-progress">
-                    <img src="aws-ml-badge.png" alt="AWS ML Engineer Associate" class="cert-badge-img">
+                    <img src="aws-ml-badge.png" alt="AWS ML Engineer Associate" class="cert-badge-img" width="320" height="180" loading="lazy">
                     <div class="cert-info">
                         <h3>ML Engineer – Associate</h3>
                         <span class="issuer">Amazon Web Services</span>
@@ -1587,7 +1668,7 @@
                 <div class="cert-card">
                     <a href="https://besa.techexpert.io/badge/atul/665" target="_blank" class="cert-link-icon" title="View Badge">↗</a>
                     <a href="https://besa.techexpert.io/badge/atul/665" target="_blank">
-                        <img src="besa1.png" alt="Foundations of AI Agents" class="cert-badge-img">
+                        <img src="besa1.png" alt="Foundations of AI Agents" class="cert-badge-img" width="320" height="320" loading="lazy">
                     </a>
                     <div class="cert-info">
                         <h3>Foundations of AI Agents</h3>
@@ -1596,7 +1677,7 @@
                 <div class="cert-card">
                     <a href="https://besa.techexpert.io/badge/atul/670" target="_blank" class="cert-link-icon" title="View Badge">↗</a>
                     <a href="https://besa.techexpert.io/badge/atul/670" target="_blank">
-                        <img src="besa2.png" alt="Building with Agentic AI" class="cert-badge-img">
+                        <img src="besa2.png" alt="Building with Agentic AI" class="cert-badge-img" width="320" height="320" loading="lazy">
                     </a>
                     <div class="cert-info">
                         <h3>Building with Agentic AI</h3>
@@ -1605,7 +1686,7 @@
                 <div class="cert-card">
                     <a href="https://besa.techexpert.io/badge/atul/675" target="_blank" class="cert-link-icon" title="View Badge">↗</a>
                     <a href="https://besa.techexpert.io/badge/atul/675" target="_blank">
-                        <img src="besa3.png" alt="Designing with Strands Agents" class="cert-badge-img">
+                        <img src="besa3.png" alt="Designing with Strands Agents" class="cert-badge-img" width="320" height="320" loading="lazy">
                     </a>
                     <div class="cert-info">
                         <h3>Designing with Strands Agents</h3>
@@ -1614,7 +1695,7 @@
                 <div class="cert-card">
                     <a href="https://besa.techexpert.io/badge/atul/676" target="_blank" class="cert-link-icon" title="View Badge">↗</a>
                     <a href="https://besa.techexpert.io/badge/atul/676" target="_blank">
-                        <img src="besa4.png" alt="Building at Scale with Bedrock AgentCore" class="cert-badge-img">
+                        <img src="besa4.png" alt="Building at Scale with Bedrock AgentCore" class="cert-badge-img" width="320" height="320" loading="lazy">
                     </a>
                     <div class="cert-info">
                         <h3>Building at Scale with Bedrock AgentCore</h3>
@@ -1623,7 +1704,7 @@
                 <div class="cert-card">
                     <a href="https://besa.techexpert.io/badge/atul/677" target="_blank" class="cert-link-icon" title="View Badge">↗</a>
                     <a href="https://besa.techexpert.io/badge/atul/677" target="_blank">
-                        <img src="besa5.png" alt="Model Context Protocol in Practice" class="cert-badge-img">
+                        <img src="besa5.png" alt="Model Context Protocol in Practice" class="cert-badge-img" width="320" height="320" loading="lazy">
                     </a>
                     <div class="cert-info">
                         <h3>Model Context Protocol in Practice</h3>
@@ -1632,7 +1713,7 @@
                 <div class="cert-card">
                     <a href="https://besa.techexpert.io/badge/atul/710" target="_blank" class="cert-link-icon" title="View Badge">↗</a>
                     <a href="https://besa.techexpert.io/badge/atul/710" target="_blank">
-                        <img src="besa6.png" alt="Supercharging Development with Kiro" class="cert-badge-img">
+                        <img src="besa6.png" alt="Supercharging Development with Kiro" class="cert-badge-img" width="320" height="320" loading="lazy">
                     </a>
                     <div class="cert-info">
                         <h3>Supercharging Development with Kiro</h3>
@@ -1684,7 +1765,11 @@
                 </div>
 
                 <div class="contact-form">
-                    <form id="contactForm">
+                    <form id="contactForm" action="https://formsubmit.co/mail@atulbhardwaj.com" method="POST">
+                        <input type="hidden" name="_subject" value="New message from atulbhardwaj.com">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_next" value="https://atulbhardwaj.com/#contact">
+                        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" id="name" name="name" required placeholder="Your Name">
@@ -1716,7 +1801,7 @@
                 <a href="https://github.com/4uatul" target="_blank" title="GitHub">💻</a>
                 <a href="mailto:mail@atulbhardwaj.com" title="Email">📧</a>
             </div>
-            <p><strong>Atul Bhardwaj</strong> · AWS Solutions Architect</p>
+            <p><strong>Atul Bhardwaj</strong> · Cloud &amp; Data Engineer</p>
             <p>Building scalable, cost-effective cloud solutions.</p>
         </div>
     </footer>
@@ -1743,19 +1828,6 @@
                 hamburger.classList.remove('active');
                 navMenu.classList.remove('active');
             }
-        });
-
-        // Contact form
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const name    = document.getElementById('name').value;
-            const email   = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
-            const link = `mailto:mail@atulbhardwaj.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
-            window.location.href = link;
-            alert("Your email client should open now. If it doesn't, email me directly at mail@atulbhardwaj.com");
-            this.reset();
         });
 
         // Scroll-in animation
