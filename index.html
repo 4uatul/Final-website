@@ -288,6 +288,57 @@
             animation: fadeUp 0.8s 0.15s ease both;
         }
 
+        .hero-certs {
+            display: flex;
+            align-items: center;
+            gap: 1.1rem;
+            width: fit-content;
+            max-width: 100%;
+            margin: 0 auto 1.75rem;
+            padding: 0.6rem 1.4rem 0.6rem 0.9rem;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.16);
+            border-radius: 18px;
+            animation: fadeUp 0.8s 0.22s ease both;
+        }
+
+        .hero-certs-badges {
+            display: flex;
+            gap: 0.35rem;
+        }
+
+        .hero-certs-badges a {
+            display: block;
+            line-height: 0;
+            transition: transform 0.2s ease;
+        }
+
+        .hero-certs-badges a:hover { transform: translateY(-3px); }
+
+        .hero-certs-badges img {
+            width: 64px;
+            height: 64px;
+            object-fit: contain;
+        }
+
+        .hero-certs-text {
+            text-align: left;
+            line-height: 1.35;
+            font-size: 0.82rem;
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+        }
+
+        .hero-certs-text strong {
+            display: block;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #fff;
+            transition: color 0.2s;
+        }
+
+        .hero-certs-text:hover strong { color: var(--blue-mid); }
+
         .hero .cta-buttons {
             display: flex;
             gap: 1rem;
@@ -887,8 +938,8 @@
         }
 
         .cert-badge-img {
-            width: 140px;
-            height: 140px;
+            width: 160px;
+            height: 160px;
             object-fit: contain;
             transition: transform 0.25s ease;
         }
@@ -898,11 +949,11 @@
         }
 
         .cert-info h3 {
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             font-weight: 600;
             color: var(--text);
             line-height: 1.35;
-            max-width: 130px;
+            max-width: 160px;
         }
 
         .cert-info .issuer { display: none; }
@@ -950,6 +1001,18 @@
         }
 
         .cert-group-label:first-of-type { margin-top: 0; }
+
+        .certs-grid-secondary { gap: 1.75rem; }
+
+        .certs-grid-secondary .cert-badge-img {
+            width: 96px;
+            height: 96px;
+        }
+
+        .certs-grid-secondary .cert-info h3 {
+            font-size: 0.78rem;
+            max-width: 130px;
+        }
 
         .cert-card.in-progress {
             opacity: 0.65;
@@ -1304,6 +1367,20 @@
             section { padding: 70px 1.25rem; }
 
             .skills-grid { grid-template-columns: 1fr; }
+
+            .hero-certs { flex-direction: column; gap: 0.6rem; padding: 0.75rem; }
+            .hero-certs-text { text-align: center; }
+            .hero-certs-badges img { width: 46px; height: 46px; }
+
+            .certs-grid {
+                display: grid;
+                grid-template-columns: repeat(2, auto);
+                justify-content: center;
+                gap: 1.75rem 1.25rem;
+            }
+            .cert-badge-img { width: 112px; height: 112px; }
+            .cert-info h3 { font-size: 0.78rem; max-width: 130px; }
+            .certs-grid-secondary .cert-badge-img { width: 80px; height: 80px; }
         }
     </style>
 </head>
@@ -1336,10 +1413,21 @@
             <img src="profile.jpg" alt="Atul Bhardwaj" class="profile-img" width="695" height="810" fetchpriority="high">
             <h1>Atul Bhardwaj <span class="wave" aria-hidden="true">👋</span></h1>
             <p class="tagline">Cloud Solutions Architect who designs and ships production AWS systems, from serverless RAG chatbots to three-tier platforms. Open to full-time roles.</p>
+            <div class="hero-certs">
+                <div class="hero-certs-badges">
+                    <a href="https://www.credly.com/badges/da566c70-a6e6-4843-a0bb-b25d89c13474/public_url" target="_blank" title="Solutions Architect – Associate (verify on Credly)"><img src="saa.png" alt="AWS Certified Solutions Architect – Associate" width="320" height="320"></a>
+                    <a href="https://www.credly.com/badges/5b5cf9c1-0ce7-4aeb-a5f0-2a8adcff8483/public_url" target="_blank" title="Machine Learning Engineer – Associate (verify on Credly)"><img src="aws-certified-machine-learning-engineer-associate.png" alt="AWS Certified Machine Learning Engineer – Associate" width="600" height="600"></a>
+                    <a href="https://www.credly.com/badges/0b1933e0-8858-4f45-9eef-3116bca7cd09/public_url" target="_blank" title="Cloud Practitioner (verify on Credly)"><img src="ccp.png" alt="AWS Certified Cloud Practitioner" width="320" height="320"></a>
+                    <a href="https://www.credly.com/badges/714cc18b-8f49-4b77-8488-6942304041fb/public_url" target="_blank" title="AI Practitioner (verify on Credly)"><img src="aip.png" alt="AWS Certified AI Practitioner" width="320" height="320"></a>
+                </div>
+                <a href="#certifications" class="hero-certs-text">
+                    <strong>4x AWS Certified</strong>
+                    Solutions Architect &amp; ML Engineer&nbsp;&ndash;&nbsp;Associate
+                </a>
+            </div>
             <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; margin-bottom:2rem;">
                 <span style="background:rgba(14,165,233,0.22); border:1px solid rgba(14,165,233,0.55); padding:0.45rem 1.1rem; border-radius:30px; font-size:0.92rem; font-weight:600; color:#fff;">🎯 Target role: Solutions Architect</span>
                 <span style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); padding:0.45rem 1.1rem; border-radius:30px; font-size:0.92rem; color:#fff;">MS CS · Seattle University</span>
-                <span style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); padding:0.45rem 1.1rem; border-radius:30px; font-size:0.92rem; color:#fff;">4x AWS Certified · SAA · MLA</span>
                 <span style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); padding:0.45rem 1.1rem; border-radius:30px; font-size:0.92rem; color:#fff;">2 Production AWS Apps Shipped</span>
                 <span style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); padding:0.45rem 1.1rem; border-radius:30px; font-size:0.92rem; color:#fff;">No Immediate Sponsorship · STEM OPT till 2029</span>
             </div>
@@ -1896,7 +1984,7 @@
                     <div class="cert-info">
                         <h3>Solutions Architect – Associate</h3>
                         <span class="issuer">Amazon Web Services</span>
-                        <span class="year">February 2026</span>
+                        <span class="year">SAA-C03 &middot; Feb 2026</span>
                     </div>
                 </div>
 
@@ -1908,7 +1996,7 @@
                     <div class="cert-info">
                         <h3>Machine Learning Engineer – Associate</h3>
                         <span class="issuer">Amazon Web Services</span>
-                        <span class="year">October 2026</span>
+                        <span class="year">MLA-C02 &middot; Oct 2026</span>
                     </div>
                 </div>
 
@@ -1920,7 +2008,7 @@
                     <div class="cert-info">
                         <h3>Certified Cloud Practitioner</h3>
                         <span class="issuer">Amazon Web Services</span>
-                        <span class="year">February 2026</span>
+                        <span class="year">CLF-C02 &middot; Feb 2026</span>
                     </div>
                 </div>
 
@@ -1932,13 +2020,13 @@
                     <div class="cert-info">
                         <h3>AI Practitioner</h3>
                         <span class="issuer">Amazon Web Services</span>
-                        <span class="year">February 2026</span>
+                        <span class="year">AIF-C01 &middot; Feb 2026</span>
                     </div>
                 </div>
             </div>
 
             <div class="cert-group-label">Agentic AI</div>
-            <div class="certs-grid">
+            <div class="certs-grid certs-grid-secondary">
                 <div class="cert-card">
                     <a href="https://besa.techexpert.io/badge/atul/665" target="_blank" class="cert-link-icon" title="View Badge">↗</a>
                     <a href="https://besa.techexpert.io/badge/atul/665" target="_blank">
