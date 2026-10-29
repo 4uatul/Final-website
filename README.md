@@ -2,7 +2,7 @@
 
 # Atul Bhardwaj
 
-[![Typing SVG](https://readme-typing-svg.demolab.com/?font=Fira+Code&weight=500&size=24&pause=1000&color=0EA5E9&center=true&vCenter=true&width=560&height=50&lines=Cloud+Solutions+Architect;Designing+production+systems+on+AWS;3x+AWS+Certified+%7C+SAA-C03;Open+to+Solutions+Architect+roles)](https://atulbhardwaj.com)
+[![Typing SVG](https://readme-typing-svg.demolab.com/?font=Fira+Code&weight=500&size=24&pause=1000&color=0EA5E9&center=true&vCenter=true&width=560&height=50&lines=Cloud+Solutions+Architect;Designing+production+systems+on+AWS;4x+AWS+Certified+%7C+SAA-C03+%7C+MLA-C02;Open+to+Solutions+Architect+roles)](https://atulbhardwaj.com)
 
 <img src="https://skillicons.dev/icons?i=aws,py,js,react,flask,docker,postgres,git,githubactions,linux,bash,nginx" alt="tech stack" />
 
@@ -17,7 +17,7 @@ $ whoami
 Atul Bhardwaj, Cloud Solutions Architect based in Seattle, WA (open to relocate)
 
 $ status --current
-MS in Computer Science, Seattle University (Jun 2026) · 3x AWS Certified, SAA-C03
+MS in Computer Science, Seattle University (Jun 2026) · 4x AWS Certified, SAA-C03 + MLA-C02
 Architected and shipped two production AWS apps: a Bedrock RAG assistant and a three-tier platform
 Led AWS Student Builder Groups at SU: 13 to 90+ members, $10K in AWS credits, 100+ hackathon participants
 
@@ -61,9 +61,9 @@ Three-tier AWS app unifying lost-and-found tracking across 4 campus offices. Hig
 ### ☁️ Certifications
 
 [![AWS Solutions Architect Associate](https://img.shields.io/badge/AWS-Solutions%20Architect%20Associate-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white)](https://www.credly.com/badges/da566c70-a6e6-4843-a0bb-b25d89c13474/public_url)
+[![AWS Machine Learning Engineer Associate](https://img.shields.io/badge/AWS-Machine%20Learning%20Engineer%20Associate-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white)](https://www.credly.com/badges/5b5cf9c1-0ce7-4aeb-a5f0-2a8adcff8483/public_url)
 [![AWS AI Practitioner](https://img.shields.io/badge/AWS-AI%20Practitioner-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white)](https://www.credly.com/badges/714cc18b-8f49-4b77-8488-6942304041fb/public_url)
 [![AWS Cloud Practitioner](https://img.shields.io/badge/AWS-Cloud%20Practitioner-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white)](https://www.credly.com/badges/0b1933e0-8858-4f45-9eef-3116bca7cd09/public_url)
-![AWS ML Engineer Associate - in progress](https://img.shields.io/badge/AWS-ML%20Engineer%20Associate%20(in%20progress)-94A3B8?style=for-the-badge&logo=amazonaws&logoColor=white)
 
 <br>
 
