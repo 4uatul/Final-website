@@ -104,7 +104,7 @@
            ============================================ */
         .section-header {
             text-align: center;
-            margin-bottom: 3.5rem;
+            margin-bottom: 2.5rem;
         }
 
         .section-header h2 {
@@ -114,23 +114,11 @@
             letter-spacing: -0.5px;
         }
 
-        .section-header h2 span {
-            color: var(--blue);
-        }
-
-        .section-divider {
-            width: 48px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--blue), var(--blue-mid));
-            border-radius: 4px;
-            margin: 0.75rem auto 0.75rem;
-        }
-
         .section-header p {
             color: var(--muted);
             font-size: 1.05rem;
             max-width: 520px;
-            margin: 0 auto;
+            margin: 0.6rem auto 0;
         }
 
         /* ============================================
@@ -227,27 +215,6 @@
             color: #fff;
             position: relative;
             overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background-image:
-                radial-gradient(circle at 18% 15%, rgba(14,165,233,0.20), transparent 42%),
-                radial-gradient(circle at 82% 5%, rgba(37,99,235,0.28), transparent 40%),
-                linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
-            background-size: auto, auto, 44px 44px, 44px 44px;
-            pointer-events: none;
-        }
-
-        .hero-spotlight {
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(500px circle at var(--x, 50%) var(--y, 30%), rgba(14,165,233,0.20), transparent 55%);
-            pointer-events: none;
-            transition: opacity 0.4s ease;
         }
 
         .hero::after {
@@ -421,22 +388,10 @@
             transition: box-shadow 0.2s, transform 0.2s;
         }
 
-        .stat-card::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(160px circle at var(--mx, 50%) var(--my, 50%), rgba(37,99,235,0.12), transparent 65%);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            pointer-events: none;
-        }
-
         .stat-card:hover {
             box-shadow: var(--shadow-md);
             transform: translateY(-2px);
         }
-
-        .stat-card:hover::after { opacity: 1; }
 
         .stat-card .num {
             font-size: 2rem;
@@ -660,22 +615,10 @@
             align-items: stretch;
         }
 
-        .project-card::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(240px circle at var(--mx, 50%) var(--my, 50%), rgba(37,99,235,0.14), transparent 62%);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            pointer-events: none;
-        }
-
         .project-card:hover {
             box-shadow: var(--shadow-blue);
             border-color: rgba(37,99,235,0.2);
         }
-
-        .project-card:hover::after { opacity: 1; }
 
         .project-img-wrap {
             position: relative;
@@ -1170,7 +1113,6 @@
         }
 
         .contact .section-header h2 { color: #fff; }
-        .contact .section-header h2 span { color: var(--blue-mid); }
         .contact .section-header p { color: rgba(255,255,255,0.65); }
 
         .contact-layout {
@@ -1203,8 +1145,6 @@
             background: rgba(255,255,255,0.12);
             border-color: rgba(255,255,255,0.2);
         }
-
-        .contact-item .icon { font-size: 1.4rem; flex-shrink: 0; }
 
         .contact-item .ci-text strong {
             display: block;
@@ -1302,15 +1242,15 @@
         }
 
         .social-links a {
-            color: rgba(255,255,255,0.55);
-            font-size: 1.35rem;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+            font-weight: 600;
             text-decoration: none;
-            transition: color 0.2s, transform 0.2s;
+            transition: color 0.2s;
         }
 
         .social-links a:hover {
             color: var(--blue-mid);
-            transform: scale(1.15);
         }
 
         /* ============================================
@@ -1324,24 +1264,6 @@
         /* ============================================
            LITTLE DETAILS
            ============================================ */
-        .wave {
-            display: inline-block;
-            transform-origin: 70% 70%;
-        }
-
-        @media (prefers-reduced-motion: no-preference) {
-            .wave { animation: wave 2.4s ease-in-out infinite; }
-        }
-
-        @keyframes wave {
-            0%, 60%, 100% { transform: rotate(0deg); }
-            10% { transform: rotate(14deg); }
-            20% { transform: rotate(-8deg); }
-            30% { transform: rotate(14deg); }
-            40% { transform: rotate(-4deg); }
-            50% { transform: rotate(10deg); }
-        }
-
         .local-time {
             font-size: 0.85rem;
             color: rgba(255,255,255,0.55);
@@ -1376,73 +1298,6 @@
 
         .back-to-top.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
         .back-to-top:hover { background: #1d4ed8; }
-
-        @media (hover: hover) and (pointer: fine) {
-            body.custom-cursor, body.custom-cursor a, body.custom-cursor button {
-                cursor: none;
-            }
-            body.custom-cursor input,
-            body.custom-cursor textarea {
-                cursor: text;
-            }
-        }
-
-        .cursor-dot {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 8px;
-            height: 8px;
-            background: var(--blue-mid);
-            border-radius: 50%;
-            pointer-events: none;
-            transform: translate(-50%, -50%);
-            transition: opacity 0.2s ease;
-            z-index: 9999;
-        }
-
-        .cursor-ring {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 32px;
-            height: 32px;
-            border: 1.5px solid rgba(37,99,235,0.55);
-            border-radius: 50%;
-            pointer-events: none;
-            transform: translate(-50%, -50%);
-            transition: width 0.25s ease, height 0.25s ease, border-color 0.25s ease, background 0.25s ease, opacity 0.2s ease;
-            z-index: 9998;
-        }
-
-        .cursor-ring.hovering {
-            width: 50px;
-            height: 50px;
-            border-color: var(--blue-mid);
-            background: rgba(14,165,233,0.08);
-        }
-
-        .cursor-ring.text-target,
-        .cursor-dot.text-target {
-            opacity: 0;
-        }
-
-        .click-ripple {
-            position: fixed;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            border: 2px solid var(--blue-mid);
-            pointer-events: none;
-            transform: translate(-50%, -50%) scale(1);
-            opacity: 0.6;
-            z-index: 9997;
-            animation: rippleExpand 0.6s ease-out forwards;
-        }
-
-        @keyframes rippleExpand {
-            to { transform: translate(-50%, -50%) scale(6); opacity: 0; }
-        }
 
         /* ============================================
            LIGHTBOX - full-size project images
@@ -1567,11 +1422,10 @@
 
     <!-- HERO -->
     <section class="hero">
-        <div class="hero-spotlight" id="heroSpotlight"></div>
         <div class="container">
             <img src="profile.jpg" alt="Atul Bhardwaj" class="profile-img" width="695" height="810" fetchpriority="high">
-            <h1>Atul Bhardwaj <span class="wave" aria-hidden="true">👋</span></h1>
-            <p class="tagline">Cloud Solutions Architect who designs and ships production AWS systems, from serverless RAG chatbots to three-tier platforms. Open to full-time roles.</p>
+            <h1>Atul Bhardwaj</h1>
+            <p class="tagline">Cloud Solutions Architect in Seattle. I design and build on AWS, and two of my projects went into production at Seattle University. Now looking for a full-time role.</p>
             <div class="hero-certs">
                 <div class="hero-certs-badges">
                     <a href="https://www.credly.com/badges/da566c70-a6e6-4843-a0bb-b25d89c13474/public_url" target="_blank" title="Solutions Architect – Associate (verify on Credly)"><img src="saa.png" alt="AWS Certified Solutions Architect – Associate" width="320" height="320"></a>
@@ -1585,14 +1439,14 @@
                 </a>
             </div>
             <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; margin-bottom:2rem;">
-                <span style="background:rgba(14,165,233,0.22); border:1px solid rgba(14,165,233,0.55); padding:0.45rem 1.1rem; border-radius:30px; font-size:0.92rem; font-weight:600; color:#fff;">🎯 Target role: Solutions Architect</span>
+                <span style="background:rgba(14,165,233,0.22); border:1px solid rgba(14,165,233,0.55); padding:0.45rem 1.1rem; border-radius:30px; font-size:0.92rem; font-weight:600; color:#fff;">Target role: Solutions Architect</span>
                 <span style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); padding:0.45rem 1.1rem; border-radius:30px; font-size:0.92rem; color:#fff;">MS CS · Seattle University</span>
-                <span style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); padding:0.45rem 1.1rem; border-radius:30px; font-size:0.92rem; color:#fff;">2 Production AWS Apps Shipped</span>
+                <span style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); padding:0.45rem 1.1rem; border-radius:30px; font-size:0.92rem; color:#fff;">2 production AWS apps shipped</span>
                 <span style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); padding:0.45rem 1.1rem; border-radius:30px; font-size:0.92rem; color:#fff;">Authorized to work in the US · No sponsorship needed until 2029</span>
             </div>
             <div class="cta-buttons">
-                <a href="#contact" class="btn btn-primary">Get In Touch</a>
-                <a href="Atul_Bhardwaj_Resume.pdf" class="btn btn-secondary" download>Download Resume</a>
+                <a href="#contact" class="btn btn-primary">Contact me</a>
+                <a href="Atul_Bhardwaj_Resume.pdf" class="btn btn-secondary" download>Download resume</a>
             </div>
         </div>
     </section>
@@ -1601,9 +1455,7 @@
     <section id="about" class="about">
         <div class="container">
             <div class="section-header">
-                <h2>About <span>Me</span></h2>
-                <div class="section-divider"></div>
-                <p>CS grad, cloud architect, two production AWS apps shipped.</p>
+                <h2>About</h2>
             </div>
 
             <div class="about-grid">
@@ -1644,9 +1496,7 @@
     <section id="education" class="education">
         <div class="container">
             <div class="section-header">
-                <h2><span>Education</span></h2>
-                <div class="section-divider"></div>
-                <p>Academic foundation in data science and computer science</p>
+                <h2>Education</h2>
             </div>
 
             <div class="edu-timeline">
@@ -1680,9 +1530,7 @@
     <section id="experience" class="experience">
         <div class="container">
             <div class="section-header">
-                <h2>Professional <span>Experience</span></h2>
-                <div class="section-divider"></div>
-                <p>Shipping production AWS applications and leading teams</p>
+                <h2>Experience</h2>
             </div>
 
             <div class="timeline">
@@ -1727,9 +1575,7 @@
     <section id="projects" class="projects">
         <div class="container">
             <div class="section-header">
-                <h2>Featured <span>Projects</span></h2>
-                <div class="section-divider"></div>
-                <p>Solving real-world problems with data and code</p>
+                <h2>Projects</h2>
             </div>
 
             <!-- Production systems -->
@@ -1934,9 +1780,7 @@
     <section id="skills" class="skills">
         <div class="container">
             <div class="section-header">
-                <h2>Technical <span>Skills</span></h2>
-                <div class="section-divider"></div>
-                <p>Tools and technologies I work with</p>
+                <h2>Skills</h2>
             </div>
 
             <div class="skills-grid">
@@ -2033,9 +1877,7 @@
     <section id="publications" class="publications">
         <div class="container">
             <div class="section-header">
-                <h2>Publications <span>&amp; Community</span></h2>
-                <div class="section-divider"></div>
-                <p>Peer-reviewed research, plus the writing and speaking around it</p>
+                <h2>Publications &amp; Community</h2>
             </div>
 
             <div class="publications-list">
@@ -2122,9 +1964,7 @@
     <section id="certifications" class="certifications">
         <div class="container">
             <div class="section-header">
-                <h2>AWS <span>Certifications</span> &amp; Credentials</h2>
-                <div class="section-divider"></div>
-                <p>Verified cloud and data science credentials</p>
+                <h2>Certifications</h2>
                 <a href="https://www.credly.com/users/atul_bhardwaj" target="_blank" class="credly-link">
                     View all badges on Credly ↗
                 </a>
@@ -2245,37 +2085,32 @@
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-header">
-                <h2>Get In <span>Touch</span></h2>
-                <div class="section-divider"></div>
-                <p>Open to Solutions Architect roles &mdash; let's talk</p>
+                <h2>Contact</h2>
+                <p>I'm looking for a full-time Solutions Architect role. Email me or use the form.</p>
             </div>
 
             <div class="contact-layout">
                 <div class="contact-links">
                     <p class="local-time" id="localTime" aria-live="off"></p>
                     <a href="mailto:mail@atulbhardwaj.com" class="contact-item">
-                        <span class="icon">📧</span>
                         <div class="ci-text">
                             <strong>Email</strong>
                             <span>mail@atulbhardwaj.com</span>
                         </div>
                     </a>
                     <div class="contact-item">
-                        <span class="icon">📍</span>
                         <div class="ci-text">
                             <strong>Location</strong>
                             <span>Seattle, WA · Open to relocate</span>
                         </div>
                     </div>
                     <a href="https://www.linkedin.com/in/atul1000" target="_blank" class="contact-item">
-                        <span class="icon">💼</span>
                         <div class="ci-text">
                             <strong>LinkedIn</strong>
                             <span>linkedin.com/in/atul1000</span>
                         </div>
                     </a>
                     <a href="https://github.com/4uatul" target="_blank" class="contact-item">
-                        <span class="icon">💻</span>
                         <div class="ci-text">
                             <strong>GitHub</strong>
                             <span>github.com/4uatul</span>
@@ -2305,7 +2140,7 @@
                             <label for="message">Message</label>
                             <textarea id="message" name="message" required placeholder="Your message here..."></textarea>
                         </div>
-                        <button type="submit" class="submit-btn">Send Message</button>
+                        <button type="submit" class="submit-btn">Send message</button>
                     </form>
                 </div>
             </div>
@@ -2316,12 +2151,12 @@
     <footer>
         <div class="container">
             <div class="social-links">
-                <a href="https://www.linkedin.com/in/atul1000" target="_blank" title="LinkedIn">💼</a>
-                <a href="https://github.com/4uatul" target="_blank" title="GitHub">💻</a>
-                <a href="mailto:mail@atulbhardwaj.com" title="Email">📧</a>
+                <a href="https://www.linkedin.com/in/atul1000" target="_blank">LinkedIn</a>
+                <a href="https://github.com/4uatul" target="_blank">GitHub</a>
+                <a href="mailto:mail@atulbhardwaj.com">Email</a>
             </div>
             <p><strong>Atul Bhardwaj</strong> · Cloud Solutions Architect</p>
-            <p>Building scalable, cost-effective cloud solutions.</p>
+            <p>Hand-written HTML, CSS and JS. No framework, no build step.</p>
         </div>
     </footer>
 
@@ -2427,96 +2262,6 @@
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && !lightbox.hidden) closeLightbox();
         });
-
-        // Mouse-reactive effects - hero spotlight + card glow/tilt
-        if (!prefersReducedMotion) {
-            const heroEl = document.querySelector('.hero');
-            const heroSpotlight = document.getElementById('heroSpotlight');
-            if (heroEl && heroSpotlight) {
-                heroEl.addEventListener('mousemove', (e) => {
-                    const rect = heroEl.getBoundingClientRect();
-                    const x = ((e.clientX - rect.left) / rect.width) * 100;
-                    const y = ((e.clientY - rect.top) / rect.height) * 100;
-                    heroSpotlight.style.setProperty('--x', `${x}%`);
-                    heroSpotlight.style.setProperty('--y', `${y}%`);
-                });
-            }
-
-            document.querySelectorAll('.project-card').forEach(card => {
-                card.addEventListener('mousemove', (e) => {
-                    const rect = card.getBoundingClientRect();
-                    const x = e.clientX - rect.left;
-                    const y = e.clientY - rect.top;
-                    const px = (x / rect.width) - 0.5;
-                    const py = (y / rect.height) - 0.5;
-                    card.style.setProperty('--mx', `${(x / rect.width) * 100}%`);
-                    card.style.setProperty('--my', `${(y / rect.height) * 100}%`);
-                    card.style.transform = `perspective(900px) rotateX(${(-py * 3).toFixed(2)}deg) rotateY(${(px * 3).toFixed(2)}deg) translateY(-3px)`;
-                });
-                card.addEventListener('mouseleave', () => {
-                    card.style.transform = '';
-                });
-            });
-
-            document.querySelectorAll('.stat-card').forEach(card => {
-                card.addEventListener('mousemove', (e) => {
-                    const rect = card.getBoundingClientRect();
-                    card.style.setProperty('--mx', `${((e.clientX - rect.left) / rect.width) * 100}%`);
-                    card.style.setProperty('--my', `${((e.clientY - rect.top) / rect.height) * 100}%`);
-                });
-            });
-
-            // Little ripple wherever you click
-            document.addEventListener('click', (e) => {
-                const ripple = document.createElement('div');
-                ripple.className = 'click-ripple';
-                ripple.style.left = `${e.clientX}px`;
-                ripple.style.top = `${e.clientY}px`;
-                document.body.appendChild(ripple);
-                ripple.addEventListener('animationend', () => ripple.remove());
-            });
-
-            // Custom cursor - a dot that leads, a ring that catches up
-            if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
-                document.body.classList.add('custom-cursor');
-                const dot = document.createElement('div');
-                dot.className = 'cursor-dot';
-                const ring = document.createElement('div');
-                ring.className = 'cursor-ring';
-                document.body.append(dot, ring);
-
-                let mouseX = window.innerWidth / 2, mouseY = window.innerHeight / 2;
-                let ringX = mouseX, ringY = mouseY;
-
-                window.addEventListener('mousemove', (e) => {
-                    mouseX = e.clientX;
-                    mouseY = e.clientY;
-                    dot.style.left = `${mouseX}px`;
-                    dot.style.top = `${mouseY}px`;
-                });
-
-                (function chaseRing() {
-                    ringX += (mouseX - ringX) * 0.18;
-                    ringY += (mouseY - ringY) * 0.18;
-                    ring.style.left = `${ringX}px`;
-                    ring.style.top = `${ringY}px`;
-                    requestAnimationFrame(chaseRing);
-                })();
-
-                document.querySelectorAll('a, button, .project-card, .cert-card, .stat-card, .skill-tag').forEach(el => {
-                    el.addEventListener('mouseenter', () => ring.classList.add('hovering'));
-                    el.addEventListener('mouseleave', () => ring.classList.remove('hovering'));
-                });
-
-                document.querySelectorAll('input, textarea').forEach(el => {
-                    el.addEventListener('mouseenter', () => { dot.classList.add('text-target'); ring.classList.add('text-target'); });
-                    el.addEventListener('mouseleave', () => { dot.classList.remove('text-target'); ring.classList.remove('text-target'); });
-                });
-
-                document.addEventListener('mouseleave', () => { dot.style.opacity = '0'; ring.style.opacity = '0'; });
-                document.addEventListener('mouseenter', () => { dot.style.opacity = '1'; ring.style.opacity = '1'; });
-            }
-        }
 
         // Local time in Seattle, and a guess at what I'm up to
         const localTimeEl = document.getElementById('localTime');
