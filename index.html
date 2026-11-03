@@ -210,8 +210,7 @@
            ============================================ */
         .hero {
             background: linear-gradient(145deg, var(--dark) 0%, #1e3a5f 100%);
-            padding: 160px 2rem 100px;
-            text-align: center;
+            padding: 130px 2rem 110px;
             color: #fff;
             position: relative;
             overflow: hidden;
@@ -228,53 +227,101 @@
             clip-path: ellipse(55% 100% at 50% 100%);
         }
 
-        .hero .container { position: relative; }
-
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 4px solid rgba(255,255,255,0.25);
-            object-fit: cover;
-            margin: 0 auto 1.5rem;
-            display: block;
-            box-shadow: 0 0 0 8px rgba(37,99,235,0.2);
-            transition: transform 0.3s ease;
+        .hero .container {
+            position: relative;
+            max-width: 1200px;
+            display: grid;
+            grid-template-columns: 460px 1fr;
+            gap: 4rem;
+            align-items: center;
         }
 
-        .profile-img:hover { transform: scale(1.04); }
-
-        .hero h1 {
-            font-size: 2.8rem;
-            font-weight: 800;
-            letter-spacing: -1px;
+        .hero-photo {
+            margin: 0;
             animation: fadeUp 0.8s ease both;
         }
 
-        .hero .tagline {
-            font-size: 1.1rem;
-            color: rgba(255,255,255,0.72);
-            margin: 0.75rem 0 2rem;
-            animation: fadeUp 0.8s 0.15s ease both;
+        .profile-img {
+            display: block;
+            width: 420px;
+            max-width: 100%;
+            height: auto;
+            aspect-ratio: 1;
+            margin: 0 auto;
+            object-fit: cover;
+            object-position: center 15%;
+            border-radius: 50%;
+            border: 6px solid rgba(255,255,255,0.22);
+            box-shadow: 0 0 0 20px rgba(37,99,235,0.28), 0 24px 48px rgba(0,0,0,0.35);
         }
+
+        .hero-text { min-width: 0; animation: fadeUp 0.8s 0.1s ease both; }
+
+        .hero-meta {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #38bdf8;
+            margin-bottom: 0.35rem;
+        }
+
+        .hero h1 {
+            font-size: 3.4rem;
+            font-weight: 800;
+            letter-spacing: -1.5px;
+            line-height: 1.1;
+        }
+
+        .hero .tagline {
+            font-size: 1.15rem;
+            color: rgba(255,255,255,0.82);
+            margin: 0.9rem 0 1.2rem;
+            max-width: 620px;
+        }
+
+        .hero-proof {
+            list-style: none;
+            margin: 0 0 1.4rem;
+            max-width: 640px;
+        }
+
+        .hero-proof li {
+            position: relative;
+            padding-left: 1.2rem;
+            margin-bottom: 0.3rem;
+            font-size: 0.97rem;
+            line-height: 1.55;
+            color: rgba(255,255,255,0.72);
+        }
+
+        .hero-proof li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.62em;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--blue-mid);
+        }
+
+        .hero-proof strong { color: #7dd3fc; font-weight: 600; }
 
         .hero-certs {
             display: flex;
             align-items: center;
-            gap: 1.1rem;
+            gap: 1rem;
             width: fit-content;
             max-width: 100%;
-            margin: 0 auto 1.75rem;
-            padding: 0.6rem 1.4rem 0.6rem 0.9rem;
+            margin-bottom: 1.4rem;
+            padding: 0.5rem 1.2rem 0.5rem 0.7rem;
             background: rgba(255,255,255,0.06);
             border: 1px solid rgba(255,255,255,0.16);
-            border-radius: 18px;
-            animation: fadeUp 0.8s 0.22s ease both;
+            border-radius: 16px;
         }
 
         .hero-certs-badges {
             display: flex;
-            gap: 0.35rem;
+            gap: 0.3rem;
         }
 
         .hero-certs-badges a {
@@ -286,8 +333,8 @@
         .hero-certs-badges a:hover { transform: translateY(-3px); }
 
         .hero-certs-badges img {
-            width: 64px;
-            height: 64px;
+            width: 54px;
+            height: 54px;
             object-fit: contain;
         }
 
@@ -301,7 +348,7 @@
 
         .hero-certs-text strong {
             display: block;
-            font-size: 1.05rem;
+            font-size: 1.02rem;
             font-weight: 700;
             color: #fff;
             transition: color 0.2s;
@@ -309,12 +356,31 @@
 
         .hero-certs-text:hover strong { color: var(--blue-mid); }
 
+        .hero-open {
+            width: fit-content;
+            max-width: 100%;
+            padding: 0.55rem 1.1rem;
+            font-size: 0.92rem;
+            line-height: 1.55;
+            color: rgba(255,255,255,0.75);
+            background: rgba(14,165,233,0.14);
+            border: 1px solid rgba(14,165,233,0.45);
+            border-radius: 14px;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-open span {
+            display: block;
+            font-size: 0.82rem;
+            color: rgba(255,255,255,0.55);
+        }
+
+        .hero-open strong { color: #fff; font-weight: 600; }
+
         .hero .cta-buttons {
             display: flex;
             gap: 1rem;
-            justify-content: center;
             flex-wrap: wrap;
-            animation: fadeUp 0.8s 0.3s ease both;
         }
 
         .btn {
@@ -1343,6 +1409,19 @@
         /* ============================================
            RESPONSIVE
            ============================================ */
+        @media (max-width: 960px) {
+            .hero { padding-top: 120px; text-align: center; }
+            .hero .container { grid-template-columns: 1fr; gap: 2rem; }
+            .hero-photo { width: 180px; margin: 0 auto; }
+            .hero-photo .profile-img { width: 180px; }
+            .profile-img { border-width: 4px; box-shadow: 0 0 0 10px rgba(37,99,235,0.28); }
+            .hero-open { margin-left: auto; margin-right: auto; }
+            .hero .tagline, .hero-proof { margin-left: auto; margin-right: auto; }
+            .hero-proof { text-align: left; }
+            .hero-certs { margin-left: auto; margin-right: auto; }
+            .hero .cta-buttons { justify-content: center; }
+        }
+
         @media (max-width: 768px) {
             .hamburger { display: flex; }
 
@@ -1361,7 +1440,7 @@
 
             nav ul.active { left: 0; }
 
-            .hero h1 { font-size: 2rem; }
+            .hero h1 { font-size: 2.2rem; }
             .hero .tagline { font-size: 1rem; }
 
             .about-grid { grid-template-columns: 1fr; }
@@ -1382,7 +1461,7 @@
                 border-radius: 12px;
             }
 
-            .hero-certs { flex-direction: column; gap: 0.6rem; padding: 0.75rem; }
+            .hero-certs { flex-direction: column; gap: 0.6rem; padding: 0.75rem; margin-left: auto; margin-right: auto; }
             .hero-certs-text { text-align: center; }
             .hero-certs-badges img { width: 52px; height: 52px; }
 
@@ -1423,30 +1502,35 @@
     <!-- HERO -->
     <section class="hero">
         <div class="container">
-            <img src="profile.jpg" alt="Atul Bhardwaj" class="profile-img" width="695" height="810" fetchpriority="high">
-            <h1>Atul Bhardwaj</h1>
-            <p class="tagline">Cloud Solutions Architect in Seattle. I design and build on AWS, and two of my projects went into production at Seattle University. Now looking for a full-time role.</p>
-            <div class="hero-certs">
-                <div class="hero-certs-badges">
-                    <a href="https://www.credly.com/badges/da566c70-a6e6-4843-a0bb-b25d89c13474/public_url" target="_blank" title="Solutions Architect – Associate (verify on Credly)"><img src="saa.png" alt="AWS Certified Solutions Architect – Associate" width="320" height="320"></a>
-                    <a href="https://www.credly.com/badges/5b5cf9c1-0ce7-4aeb-a5f0-2a8adcff8483/public_url" target="_blank" title="Machine Learning Engineer – Associate (verify on Credly)"><img src="aws-certified-machine-learning-engineer-associate.png" alt="AWS Certified Machine Learning Engineer – Associate" width="600" height="600"></a>
-                    <a href="https://www.credly.com/badges/0b1933e0-8858-4f45-9eef-3116bca7cd09/public_url" target="_blank" title="Cloud Practitioner (verify on Credly)"><img src="ccp.png" alt="AWS Certified Cloud Practitioner" width="320" height="320"></a>
-                    <a href="https://www.credly.com/badges/714cc18b-8f49-4b77-8488-6942304041fb/public_url" target="_blank" title="AI Practitioner (verify on Credly)"><img src="aip.png" alt="AWS Certified AI Practitioner" width="320" height="320"></a>
+            <figure class="hero-photo">
+                <img src="profile.jpg" alt="Atul Bhardwaj" class="profile-img" width="695" height="810" fetchpriority="high">
+            </figure>
+            <div class="hero-text">
+                <p class="hero-meta">Cloud &amp; AI on AWS &middot; MS Computer Science, Seattle University</p>
+                <h1>Atul Bhardwaj</h1>
+                <p class="tagline">I sit with the people who have the problem, work out what they actually need, then design and build it on AWS. Two of my builds ran in production at Seattle University.</p>
+                <ul class="hero-proof">
+                    <li><strong>Discovery to production:</strong> 5 departments interviewed, one Bedrock assistant that handled 20+ questions a day</li>
+                    <li><strong>Pitching:</strong> cold-emailed AWS VP Jeff Barr, won $10K in credits for a 100+ person hackathon</li>
+                    <li><strong>Explaining:</strong> 1-to-many Bedrock and Serverless sessions for 30+ builders each</li>
+                </ul>
+                <div class="hero-certs">
+                    <div class="hero-certs-badges">
+                        <a href="https://www.credly.com/badges/da566c70-a6e6-4843-a0bb-b25d89c13474/public_url" target="_blank" title="Solutions Architect – Associate (verify on Credly)"><img src="saa.png" alt="AWS Certified Solutions Architect – Associate" width="320" height="320"></a>
+                        <a href="https://www.credly.com/badges/5b5cf9c1-0ce7-4aeb-a5f0-2a8adcff8483/public_url" target="_blank" title="Machine Learning Engineer – Associate (verify on Credly)"><img src="aws-certified-machine-learning-engineer-associate.png" alt="AWS Certified Machine Learning Engineer – Associate" width="600" height="600"></a>
+                        <a href="https://www.credly.com/badges/0b1933e0-8858-4f45-9eef-3116bca7cd09/public_url" target="_blank" title="Cloud Practitioner (verify on Credly)"><img src="ccp.png" alt="AWS Certified Cloud Practitioner" width="320" height="320"></a>
+                        <a href="https://www.credly.com/badges/714cc18b-8f49-4b77-8488-6942304041fb/public_url" target="_blank" title="AI Practitioner (verify on Credly)"><img src="aip.png" alt="AWS Certified AI Practitioner" width="320" height="320"></a>
+                    </div>
+                    <a href="#certifications" class="hero-certs-text">
+                        <strong>4x AWS Certified</strong>
+                        Solutions Architect &amp; <span style="white-space:nowrap">ML Engineer &ndash; Associate</span>
+                    </a>
                 </div>
-                <a href="#certifications" class="hero-certs-text">
-                    <strong>4x AWS Certified</strong>
-                    Solutions Architect &amp; <span style="white-space:nowrap">ML Engineer &ndash; Associate</span>
-                </a>
-            </div>
-            <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; margin-bottom:2rem;">
-                <span style="background:rgba(14,165,233,0.22); border:1px solid rgba(14,165,233,0.55); padding:0.45rem 1.1rem; border-radius:30px; font-size:0.92rem; font-weight:600; color:#fff;">Target role: Solutions Architect</span>
-                <span style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); padding:0.45rem 1.1rem; border-radius:30px; font-size:0.92rem; color:#fff;">MS CS · Seattle University</span>
-                <span style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); padding:0.45rem 1.1rem; border-radius:30px; font-size:0.92rem; color:#fff;">2 production AWS apps shipped</span>
-                <span style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); padding:0.45rem 1.1rem; border-radius:30px; font-size:0.92rem; color:#fff;">Authorized to work in the US · No sponsorship needed until 2029</span>
-            </div>
-            <div class="cta-buttons">
-                <a href="#contact" class="btn btn-primary">Contact me</a>
-                <a href="Atul_Bhardwaj_Resume.pdf" class="btn btn-secondary" download>Download resume</a>
+                <p class="hero-open"><strong>Open to</strong> Solutions Architect &middot; Pre-sales / SE &middot; Technical Consultant &middot; AI Solutions<span>US work authorized &middot; no sponsorship needed until 2029</span></p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn btn-primary">Contact me</a>
+                    <a href="Atul_Bhardwaj_Resume.pdf" class="btn btn-secondary" download>Download resume</a>
+                </div>
             </div>
         </div>
     </section>
@@ -1586,7 +1670,7 @@
                     <div class="project-content">
                         <h3>SUChatBot: Campus RAG Chatbot</h3>
                         <p class="project-date">May 2026</p>
-                        <p>Replaced 53 static SharePoint pages with a serverless chatbot that answers questions for 5 campus departments instantly, no staff needed.</p>
+                        <p>Replaced 53 static SharePoint pages with a serverless chatbot that answered questions for 5 campus departments instantly, no staff needed.</p>
                         <ul class="project-bullets">
                             <li>S3 Vectors over OpenSearch: ~$350/month saved, sub-3s responses</li>
                             <li>Fully serverless: Lambda + API Gateway + CloudFront</li>
