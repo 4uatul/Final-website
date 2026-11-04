@@ -1198,14 +1198,14 @@
         }
 
         .contact-item:hover {
-            background: rgba(255,255,255,0.12);
-            border-color: rgba(255,255,255,0.2);
+            background: rgba(56,189,248,0.1);
+            border-color: rgba(56,189,248,0.45);
         }
 
         .contact-item .ci-text strong {
             display: block;
             font-size: 0.82rem;
-            color: rgba(255,255,255,0.55);
+            color: #7dd3fc;
             text-transform: uppercase;
             letter-spacing: 0.7px;
             margin-bottom: 0.1rem;
@@ -1215,6 +1215,30 @@
             font-size: 0.95rem;
             font-weight: 500;
         }
+
+        .contact-email a.ci-text {
+            flex: 1;
+            min-width: 0;
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .copy-btn {
+            flex: none;
+            padding: 0.35rem 0.85rem;
+            font-family: inherit;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #e0f2fe;
+            background: rgba(56,189,248,0.15);
+            border: 1px solid rgba(56,189,248,0.45);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s, border-color 0.2s;
+        }
+
+        .copy-btn:hover { background: rgba(56,189,248,0.28); }
+        .copy-btn.copied { color: #38bdf8; border-color: rgba(56,189,248,0.5); }
 
         .contact-form {
             background: #fff;
@@ -1251,6 +1275,7 @@
             outline: none;
             border-color: var(--blue);
             background: #fff;
+            box-shadow: 0 0 0 3px rgba(37,99,235,0.15);
         }
 
         .form-group textarea {
@@ -1261,7 +1286,7 @@
         .submit-btn {
             width: 100%;
             padding: 0.85rem;
-            background: var(--blue);
+            background: linear-gradient(135deg, var(--blue), var(--blue-mid));
             color: #fff;
             border: none;
             border-radius: 8px;
@@ -1272,7 +1297,7 @@
         }
 
         .submit-btn:hover {
-            background: #1d4ed8;
+            background: linear-gradient(135deg, #1d4ed8, #0284c7);
             transform: translateY(-2px);
             box-shadow: 0 6px 18px rgba(37,99,235,0.35);
         }
@@ -1342,7 +1367,7 @@
             margin: -0.3rem 0 0.3rem;
         }
 
-        .local-time strong { color: rgba(255,255,255,0.85); font-weight: 600; }
+        .local-time strong { color: #38bdf8; font-weight: 600; }
 
         .back-to-top {
             position: fixed;
@@ -2191,18 +2216,19 @@
         <div class="container">
             <div class="section-header">
                 <h2>Contact</h2>
-                <p>I'm looking for a full-time role in solutions architecture, pre-sales or technical consulting. Email me or use the form.</p>
+                <p>Open to full-time roles in solutions architecture, pre-sales, technical consulting and AI analytics. Email me or use the form.</p>
             </div>
 
             <div class="contact-layout">
                 <div class="contact-links">
                     <p class="local-time" id="localTime" aria-live="off"></p>
-                    <a href="mailto:mail@atulbhardwaj.com" class="contact-item">
-                        <div class="ci-text">
+                    <div class="contact-item contact-email">
+                        <a href="mailto:mail@atulbhardwaj.com" class="ci-text">
                             <strong>Email</strong>
                             <span>mail@atulbhardwaj.com</span>
-                        </div>
-                    </a>
+                        </a>
+                        <button type="button" class="copy-btn" id="copyEmail" data-email="mail@atulbhardwaj.com">Copy</button>
+                    </div>
                     <div class="contact-item">
                         <div class="ci-text">
                             <strong>Location</strong>
@@ -2221,6 +2247,12 @@
                             <span>github.com/4uatul</span>
                         </div>
                     </a>
+                    <a href="Atul_Bhardwaj_Resume.pdf" class="contact-item" download>
+                        <div class="ci-text">
+                            <strong>Resume</strong>
+                            <span>Download PDF</span>
+                        </div>
+                    </a>
                 </div>
 
                 <div class="contact-form">
@@ -2231,19 +2263,19 @@
                         <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required placeholder="Your Name">
+                            <input type="text" id="name" name="name" required placeholder="Jane Smith">
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                            <input type="email" id="email" name="email" required placeholder="jane@company.com">
                         </div>
                         <div class="form-group">
                             <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" required placeholder="What's this about?">
+                            <input type="text" id="subject" name="subject" required placeholder="Role or opportunity">
                         </div>
                         <div class="form-group">
                             <label for="message">Message</label>
-                            <textarea id="message" name="message" required placeholder="Your message here..."></textarea>
+                            <textarea id="message" name="message" required placeholder="A few lines about the role, team or project"></textarea>
                         </div>
                         <button type="submit" class="submit-btn">Send message</button>
                         <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
@@ -2277,13 +2309,13 @@
         const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
         // A little something for anyone poking around in devtools
-        console.log('%c👋 hey, curious about the code?', 'font-size:15px; font-weight:700; color:#2563eb;');
+        console.log('%chey, curious about the code?', 'font-size:15px; font-weight:700; color:#2563eb;');
         console.log('%cNo framework, no build step, just hand-written HTML/CSS/JS. If you\'re hiring for solutions architecture, pre-sales or consulting, let\'s talk: mail@atulbhardwaj.com', 'font-size:12px; color:#64748b;');
 
         // Miss you already
         const defaultTitle = document.title;
         document.addEventListener('visibilitychange', () => {
-            document.title = document.hidden ? '👋 come back!' : defaultTitle;
+            document.title = document.hidden ? 'come back!' : defaultTitle;
         });
 
         // Hamburger menu
@@ -2369,7 +2401,7 @@
             if (e.key === 'Escape' && !lightbox.hidden) closeLightbox();
         });
 
-        // Local time in Seattle, and a guess at what I'm up to
+        // Local time in Seattle, and whether it's business hours there
         const localTimeEl = document.getElementById('localTime');
         if (localTimeEl) {
             const updateLocalTime = () => {
@@ -2381,12 +2413,21 @@
                     timeZone: 'America/Los_Angeles', hour: 'numeric', hour12: false
                 }).format(now), 10);
 
-                let status = '💤 probably asleep';
-                if (hour >= 7 && hour < 12) status = '☕ probably starting the day';
-                else if (hour >= 12 && hour < 17) status = '💻 probably heads-down building something';
-                else if (hour >= 17 && hour < 22) status = '🌆 probably wrapping up for the day';
+                const weekday = new Intl.DateTimeFormat('en-US', { timeZone: 'America/Los_Angeles', weekday: 'short' }).format(now);
+                const isWeekend = weekday === 'Sat' || weekday === 'Sun';
+                const status = !isWeekend && hour >= 9 && hour < 18 ? 'within business hours' : 'outside business hours';
 
-                localTimeEl.innerHTML = `🕐 <strong>${time}</strong> in Seattle · ${status}`;
+                // How far Seattle is from the visitor, e.g. "3 hours behind you"
+                const seattleOffset = (new Date(now.toLocaleString('en-US', { timeZone: 'America/Los_Angeles' })) - new Date(now.toLocaleString('en-US', { timeZone: 'UTC' }))) / 60000;
+                const diff = (-now.getTimezoneOffset() - seattleOffset) / 60;
+                let relative = '';
+                if (diff === 0) relative = '<br>Same time zone as you';
+                else {
+                    const hrs = Math.abs(diff);
+                    relative = `<br>That's ${hrs} hour${hrs === 1 ? '' : 's'} ${diff > 0 ? 'behind' : 'ahead of'} you`;
+                }
+
+                localTimeEl.innerHTML = `<strong>${time}</strong> Pacific Time in Seattle · ${status}${relative}`;
             };
             updateLocalTime();
             setInterval(updateLocalTime, 60000);
@@ -2430,6 +2471,24 @@
                 } finally {
                     submitBtn.disabled = false;
                     submitBtn.textContent = 'Send message';
+                }
+            });
+        }
+
+        // Copy email
+        const copyEmail = document.getElementById('copyEmail');
+        if (copyEmail) {
+            copyEmail.addEventListener('click', async () => {
+                try {
+                    await navigator.clipboard.writeText(copyEmail.dataset.email);
+                    copyEmail.textContent = 'Copied';
+                    copyEmail.classList.add('copied');
+                    setTimeout(() => {
+                        copyEmail.textContent = 'Copy';
+                        copyEmail.classList.remove('copied');
+                    }, 2000);
+                } catch (err) {
+                    window.location.href = 'mailto:' + copyEmail.dataset.email;
                 }
             });
         }
