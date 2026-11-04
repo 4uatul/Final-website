@@ -1276,6 +1276,22 @@
             transform: translateY(-2px);
             box-shadow: 0 6px 18px rgba(37,99,235,0.35);
         }
+        .submit-btn:disabled {
+            opacity: 0.7;
+            cursor: wait;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .form-status {
+            margin-top: 0.9rem;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        .form-status:empty { display: none; }
+        .form-status.ok { color: #15803d; }
+        .form-status.error { color: #b45309; }
+        .form-status a { color: inherit; font-weight: 600; }
 
         /* ============================================
            FOOTER
@@ -2230,6 +2246,7 @@
                             <textarea id="message" name="message" required placeholder="Your message here..."></textarea>
                         </div>
                         <button type="submit" class="submit-btn">Send message</button>
+                        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
                     </form>
                 </div>
             </div>
@@ -2373,6 +2390,48 @@
             };
             updateLocalTime();
             setInterval(updateLocalTime, 60000);
+        }
+
+        // Contact form: send in the background, and if formsubmit.co is down,
+        // open the visitor's mail app with their message filled in instead
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            const formStatus = document.getElementById('formStatus');
+            const submitBtn = contactForm.querySelector('.submit-btn');
+
+            contactForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const data = Object.fromEntries(new FormData(contactForm));
+                if (data._honey) return;
+
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Sending…';
+                formStatus.className = 'form-status';
+                formStatus.textContent = '';
+
+                try {
+                    const res = await fetch('https://formsubmit.co/ajax/mail@atulbhardwaj.com', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                        body: JSON.stringify(data),
+                        signal: AbortSignal.timeout(12000)
+                    });
+                    const json = await res.json();
+                    if (!res.ok || String(json.success) !== 'true') throw new Error(json.message || res.status);
+
+                    contactForm.reset();
+                    formStatus.classList.add('ok');
+                    formStatus.textContent = "Thanks, your message is on its way. I'll get back to you soon.";
+                } catch (err) {
+                    const body = `${data.message}\n\n${data.name}\n${data.email}`;
+                    window.location.href = `mailto:mail@atulbhardwaj.com?subject=${encodeURIComponent(data.subject)}&body=${encodeURIComponent(body)}`;
+                    formStatus.classList.add('error');
+                    formStatus.innerHTML = 'The form service isn\'t responding, so I opened your email app with your message filled in. If nothing opened, email me at <a href="mailto:mail@atulbhardwaj.com">mail@atulbhardwaj.com</a>.';
+                } finally {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Send message';
+                }
+            });
         }
 
         // Back to top
